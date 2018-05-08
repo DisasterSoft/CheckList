@@ -37,28 +37,7 @@ public class databaseHelper extends SQLiteOpenHelper {
         localContentValues.put("userName", paramString1);
         return localSQLiteDatabase.insert(uTableName, null, localContentValues) != -1L;
     }
-    /**
-     * Bejelentkezés/vagy regisztrál egy felhasználót
-     * @param paramString1-email
 
-     * @return Cursor
-     */
-    public Cursor login(String paramString1)
-    {
-        SQLiteDatabase localSQLiteDatabase = getReadableDatabase();
-        // Log.d("SQL", paramString2);
-        String str1 = "SELECT * FROM "+uTableName+" where userName='"+paramString1+"''";
-        //Log.d("SQL", str1);
-        Cursor localCursor = localSQLiteDatabase.rawQuery(str1, null);
-        if (localCursor.getCount() == 0)
-        {
-            addData(paramString1);
-            String str2 = "SELECT * FROM "+uTableName+" where userName='"+paramString1+"'";
-            localCursor = localSQLiteDatabase.rawQuery(str2, null);
-        }
-
-        return localCursor;
-    }
     public void onCreate(SQLiteDatabase paramSQLiteDatabase)
     {
         paramSQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS "+uTableName+" (ID INTEGER PRIMARY KEY AUTOINCREMENT,  userName TEXT, password TEXT)");
@@ -73,6 +52,35 @@ public class databaseHelper extends SQLiteOpenHelper {
         paramSQLiteDatabase.execSQL("DROP TABLE if EXISTS "+iTableName);
         onCreate(paramSQLiteDatabase);
     }
-   
+    /**
+     * Bejelentkezés/vagy regisztrál egy felhasználót
+     * @param paramString1-email
+
+     * @return Cursor
+     */
+    public Cursor login(String paramString1)
+    {
+        SQLiteDatabase localSQLiteDatabase = getReadableDatabase();
+        // Log.d("SQL", paramString2);
+        String str1 = "SELECT * FROM "+uTableName+" where userName='"+paramString1+"'";
+        //Log.d("SQL", str1);
+        Cursor localCursor = localSQLiteDatabase.rawQuery(str1, null);
+        if (localCursor.getCount() == 0)
+        {
+            addData(paramString1);
+            String str2 = "SELECT * FROM "+uTableName+" where userName='"+paramString1+"'";
+            localCursor = localSQLiteDatabase.rawQuery(str2, null);
+        }
+
+        return localCursor;
+    }
+    public  Cursor getName(String id)
+    {
+        SQLiteDatabase localSQLiteDatabase = getReadableDatabase();
+        String str1 = "SELECT userName FROM "+uTableName+" where ID='"+id+"'";
+        //  Log.d("SQL", str1);
+        Cursor localCursor = localSQLiteDatabase.rawQuery(str1, null);
+        return localCursor;
+    }
       }
 

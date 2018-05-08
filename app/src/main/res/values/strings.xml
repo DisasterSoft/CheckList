@@ -3,4 +3,10 @@
     <string name="prompt_email">Username</string>
     <string name="plsFillUsername">Please enter some username</string>
     <string name="login">Register and login</string>
+    <string name="welcome">Welcome dear </string>
+    <string name="makeList">Make List </string>
+    <string name="viewList">View Lists </string>
+    <string name="item">Item </string>
+    <string name="add">Add </string>
+    <string name="hintadd">If you added the wrong item, just press and hold on the name and it is deleted. </string>
 </resources>
