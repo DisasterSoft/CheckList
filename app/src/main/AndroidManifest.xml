@@ -18,8 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mainScreen" />
-        <activity android:name=".makeList"></activity>
+        <activity
+            android:name=".mainScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".makeList"
+            android:screenOrientation="portrait" />
+        <activity android:name=".viewList"></activity>
     </application>
 
 </manifest>

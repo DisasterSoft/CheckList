@@ -38,6 +38,16 @@ public class mainScreen extends AppCompatActivity {
                 finish();
             }
         });
+        viewLists.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = null;
+                intent2 = new Intent(mainScreen.this, viewList.class);
+                intent2.putExtra("datas", id);
+                startActivity(intent2);
+                finish();
+            }
+        });
 
     }
 }

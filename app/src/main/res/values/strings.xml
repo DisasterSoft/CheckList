@@ -1,12 +1,133 @@
 <resources>
     <string name="app_name">CheckList</string>
-    <string name="prompt_email">Username</string>
+    <string name="prompt_email"> Username</string>
     <string name="plsFillUsername">Please enter some username</string>
+    <string name="plsFillitem">Please enter some item to buy</string>
     <string name="login">Register and login</string>
     <string name="welcome">Welcome dear </string>
     <string name="makeList">Make List </string>
     <string name="viewList">View Lists </string>
     <string name="item">Item </string>
+    <string name="num">Number </string>
     <string name="add">Add </string>
+    <string name="back">Back </string>
+    <string name="save">Save </string>
+    <string name="delete">Delete </string>
+    <string name="itemAdded">Item added </string>
+    <string name="itemSaved">List saved! </string>
+    <string name="noList">You dont have any lists! Please make some. </string>
     <string name="hintadd">If you added the wrong item, just press and hold on the name and it is deleted. </string>
+    <string-array name="list_of_items">
+        <item>alap</item>
+        <item>apple</item>
+        <item>asparagus</item>
+        <item>avocado</item>
+        <item>bacon</item>
+        <item>banana</item>
+        <item>banana_split</item>
+        <item>bavarian_pretzel</item>
+        <item>beer</item>
+        <item>beet</item>
+        <item>bento</item>
+        <item>birthday_cake</item>
+        <item>bread</item>
+        <item>broccoli</item>
+        <item>bull</item>
+        <item>cabbage</item>
+        <item>cafe</item>
+        <item>carrot</item>
+        <item>celery</item>
+        <item>checklist</item>
+        <item>cheese</item>
+        <item>cherry</item>
+        <item>chicken</item>
+        <item>chili_pepper</item>
+        <item>cinnamon_roll</item>
+        <item>citrus</item>
+        <item>coconut_cocktail</item>
+        <item>cookies</item>
+        <item>corn</item>
+        <item>cotton_candy</item>
+        <item>cow</item>
+        <item>crab</item>
+        <item>cucumber</item>
+        <item>cupcake</item>
+        <item>dim_sum</item>
+        <item>dolmades</item>
+        <item>doughnut</item>
+        <item>dragon_fruit</item>
+        <item>duck</item>
+        <item>durian</item>
+        <item>eggplant</item>
+        <item>eggs</item>
+        <item>filleted_fish</item>
+        <item>fish</item>
+        <item>french_fries</item>
+        <item>garlic</item>
+        <item>grapes</item>
+        <item>hamburger</item>
+        <item>hazelnut</item>
+        <item>honey</item>
+        <item>hops</item>
+        <item>horse</item>
+        <item>hot_chocolate</item>
+        <item>hot_dog</item>
+        <item>kebab</item>
+        <item>kiwi</item>
+        <item>lettuce</item>
+        <item>macaron</item>
+        <item>melon</item>
+        <item>milk</item>
+        <item>mushroom</item>
+        <item>nachos</item>
+        <item>noodles</item>
+        <item>nut</item>
+        <item>octopus</item>
+        <item>olive_oil</item>
+        <item>onion</item>
+        <item>pancake</item>
+        <item>paprika</item>
+        <item>peanuts</item>
+        <item>pear</item>
+        <item>peas</item>
+        <item>pig</item>
+        <item>pineapple</item>
+        <item>pizza</item>
+        <item>plum</item>
+        <item>pomegranate</item>
+        <item>potato</item>
+        <item>prawn</item>
+        <item>rack_of_lamb</item>
+        <item>raspberry</item>
+        <item>sack_of_flour</item>
+        <item>sesame</item>
+        <item>sheep</item>
+        <item>shellfish</item>
+        <item>soda_bottle</item>
+        <item>soy</item>
+        <item>spaghetti</item>
+        <item>steak</item>
+        <item>strawberry</item>
+        <item>sugar</item>
+        <item>sugar_cubes</item>
+        <item>sushi</item>
+        <item>sweet_potato</item>
+        <item>sweetener</item>
+        <item>szalami</item>
+        <item>taco</item>
+        <item>tea</item>
+        <item>tomato</item>
+        <item>watermelon</item>
+        <item>wine_bottle</item>
+        <item>wrap</item>
+    </string-array>
+    <string-array name="list_of_spinner">
+        <item>-Choose-</item>
+        <item>kg</item>
+        <item>pack</item>
+        <item>g</item>
+        <item>ml</item>
+        <item>l</item>
+        <item>piece</item>
+    </string-array>
 </resources>

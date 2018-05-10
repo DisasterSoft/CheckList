@@ -6,11 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class loginScreen extends AppCompatActivity {
-private TextView username;
+private EditText username;
 private CardView login;
 private databaseHelper userDB;
     @Override
@@ -18,6 +19,7 @@ private databaseHelper userDB;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
         username=findViewById(R.id.email);
+        username.requestFocus();
         login=findViewById(R.id.email_sign_in_button);
         userDB = new databaseHelper(this);
         login.setOnClickListener(new View.OnClickListener() {

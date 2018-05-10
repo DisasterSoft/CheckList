@@ -1,8 +1,9 @@
 package com.ewulusen.disastersoft.checklist;
 
 import android.content.Intent;
-import android.os.Bundle;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,11 +17,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class makeList extends AppCompatActivity implements recyclerItemTouchHelper.RecyclerItemTouchHelperListener {
-
+public class viewList extends AppCompatActivity implements recyclerItemTouchHelper.RecyclerItemTouchHelperListener {
     public static Intent intent;
     public static String id;
     databaseHelper userDB;
@@ -30,76 +31,37 @@ public class makeList extends AppCompatActivity implements recyclerItemTouchHelp
     public EditText db;
     public Spinner spinner;
     private ArrayAdapter sAdapter;
-    private itemAdapter iAdapter;
+    public itemAdapter iAdapter;
     public List<item> movieList = new ArrayList<item>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_make_list);
+        setContentView(R.layout.activity_view_list);
         intent = getIntent();
         id = intent.getStringExtra("datas");
         userDB = new databaseHelper(this);
-        item=findViewById(R.id.item);
         add=findViewById(R.id.add);
         back=findViewById(R.id.back);
-        save=findViewById(R.id.save);
-        lista=findViewById(R.id.lista);
-        spinner=findViewById(R.id.spinner);
-        db=findViewById(R.id.db);
-        String[] items = getResources().getStringArray(R.array.list_of_items);
-        ArrayAdapter itemAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,items);
-        item.setAdapter(itemAdapter);
-        String[] spinner_items = getResources().getStringArray(R.array.list_of_spinner);
-        sAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,spinner_items);
-        spinner.setAdapter(sAdapter);
-        iAdapter=new itemAdapter(movieList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        lista.setLayoutManager(mLayoutManager);
-        lista.setItemAnimator(new DefaultItemAnimator());
-        lista.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-        lista.setAdapter(iAdapter);
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addElem(item.getText().toString(),spinner.getSelectedItem().toString(),db.getText().toString());
-            }
-        });
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent2 = null;
-                intent2 = new Intent(makeList.this,mainScreen.class);
+                intent2 = new Intent(viewList.this,mainScreen.class);
                 intent2.putExtra("datas", id);
                 startActivity(intent2);
                 finish();
             }
         });
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveData();
-            }
-        });
+        lista=findViewById(R.id.lista);
+        iAdapter=new itemAdapter(movieList);
+        fillAdapter();
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        lista.setLayoutManager(mLayoutManager);
+        lista.setItemAnimator(new DefaultItemAnimator());
+        lista.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        lista.setAdapter(iAdapter);
         ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new recyclerItemTouchHelper(0, ItemTouchHelper.LEFT, (recyclerItemTouchHelper.RecyclerItemTouchHelperListener) this);
         new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(lista);
-    }
-    private void addElem(String item,String itemmenny,String db)
-    {
-        if(item.isEmpty())
-        {
-            Toast.makeText(makeList.this, getString(R.string.plsFillitem), Toast.LENGTH_LONG).show();
-        }
-        else
-        {
-            item i=new item(item,itemmenny,db);
-            movieList.add(i);
-            iAdapter.notifyDataSetChanged();
-            Toast.makeText(makeList.this, getString(R.string.itemAdded), Toast.LENGTH_SHORT).show();
-            this.db.setText("");
-            this.item.setText("");
-            spinner.setSelection(0);
-        }
     }
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction, int position) {
@@ -113,15 +75,31 @@ public class makeList extends AppCompatActivity implements recyclerItemTouchHelp
 
             // remove the item from recycler view
             iAdapter.removeItem(viewHolder.getAdapterPosition());
+            userDB.deleteItem(name,id);
 
 
         }
     }
-    public void saveData()
-    {
-        userDB.saveData(movieList,id);
-        userDB.databasePrinter(id);
-        Toast.makeText(makeList.this, getString(R.string.itemSaved), Toast.LENGTH_SHORT).show();
+    public void fillAdapter() {
+        Cursor lcursor = userDB.getItems(id);
+        Log.d("listcoursecount",lcursor.getCount()+"");
 
+        if (lcursor.getCount() > 0) {
+            while (lcursor.moveToNext()) {
+                item i = new item(lcursor.getString(lcursor.getColumnIndex("Name")), lcursor.getString(lcursor.getColumnIndex("TYPE")), lcursor.getString(lcursor.getColumnIndex("DB")));
+                movieList.add(i);
+
+            }
+            iAdapter.notifyDataSetChanged();
+        }
+        else
+        {
+            Intent intent2 = null;
+            intent2 = new Intent(viewList.this,mainScreen.class);
+            intent2.putExtra("datas", id);
+            startActivity(intent2);
+            Toast.makeText(viewList.this, getString(R.string.noList), Toast.LENGTH_SHORT).show();
+            finish();
+        }
     }
 }
