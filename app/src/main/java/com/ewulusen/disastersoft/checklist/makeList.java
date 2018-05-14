@@ -16,6 +16,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +36,8 @@ public class makeList extends AppCompatActivity implements recyclerItemTouchHelp
     public Spinner spinner;
     private ArrayAdapter sAdapter;
     private itemAdapter iAdapter;
-    public List<item> movieList = new ArrayList<item>();
+    public List<item> movieList = new ArrayList<>();
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +89,11 @@ public class makeList extends AppCompatActivity implements recyclerItemTouchHelp
         });
         ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new recyclerItemTouchHelper(0, ItemTouchHelper.LEFT, (recyclerItemTouchHelper.RecyclerItemTouchHelperListener) this);
         new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(lista);
+        MobileAds.initialize(this,getString(R.string.admod));
+
+        mAdView = findViewById(R.id.adView2);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
     private void addElem(String item,String itemmenny,String db)
     {
@@ -120,7 +131,7 @@ public class makeList extends AppCompatActivity implements recyclerItemTouchHelp
     public void saveData()
     {
         userDB.saveData(movieList,id);
-        userDB.databasePrinter(id);
+       // userDB.databasePrinter(id);
         Toast.makeText(makeList.this, getString(R.string.itemSaved), Toast.LENGTH_SHORT).show();
 
     }

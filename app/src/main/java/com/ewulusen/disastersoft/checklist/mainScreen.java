@@ -8,6 +8,11 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 public class mainScreen extends AppCompatActivity {
     public static Intent intent;
     public static String id,idC,seged;
@@ -15,6 +20,8 @@ public class mainScreen extends AppCompatActivity {
     databaseHelper userDB;
     private CardView makeList,viewLists;
     private TextView welcome;
+    private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +55,11 @@ public class mainScreen extends AppCompatActivity {
                 finish();
             }
         });
+        MobileAds.initialize(this,getString(R.string.admod));
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
     }
 }

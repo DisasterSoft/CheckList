@@ -43,8 +43,75 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        String[] list={"alap","apple","asparagus","avocado","bacon","banana","banana_split","bavarian_pretzel","beer","beet","bento","birthday_cake","	bread","broccoli","bull","cabbage","cafe","carrot","celery","checklist","cheese","cherry","chicken","chili_pepper","cinnamon_roll","citrus","coconut_cocktail","cookies","corn","cotton_candy","cow","crab","cucumber","cupcake","dim_sum","dolmades","doughnut","zolidragon_fruit","duck","durian","eggplant","eggs","filleted_fish","fish","french_fries","garlic","grapes","hamburger","hazelnut","honey","hops","horse","hot_chocolate","hot_dog","kebab","kiwi","lettuce","macaron","melon","milk","mushroom","nachos","noodles","nut","octopus","olive_oil","onion","pancake","paprika","peanuts","pear","peas","pig","pineapple","pizza","plum","pomegranate","potato","prawn","rack_of_lamb","raspberry","sack_of_flour","sesame","sheep","shellfish","soda_bottle","soy","spaghetti","steak","strawberry","sugar","sugar_cubes","sushi","sweet_potato","sweetener","salami","taco","tea","tomato","watermelon","wine_bottle","wrap"};
-        int[] images={R.drawable.alap,R.drawable.apple,R.drawable.asparagus,R.drawable.avocado,R.drawable.bacon,R.drawable.banana,R.drawable.banana_split,R.drawable.bavarian_pretzel,R.drawable.beer,R.drawable.beet,R.drawable.bento,R.drawable.birthday_cake,R.drawable.	bread,R.drawable.broccoli,R.drawable.bull,R.drawable.cabbage,R.drawable.cafe,R.drawable.carrot,R.drawable.celery,R.drawable.checklist,R.drawable.cheese,R.drawable.cherry,R.drawable.chicken,R.drawable.chili_pepper,R.drawable.cinnamon_roll,R.drawable.citrus,R.drawable.coconut_cocktail,R.drawable.cookies,R.drawable.corn,R.drawable.cotton_candy,R.drawable.cow,R.drawable.crab,R.drawable.cucumber,R.drawable.cupcake,R.drawable.dim_sum,R.drawable.dolmades,R.drawable.doughnut,R.drawable.	dragon_fruit,R.drawable.duck,R.drawable.durian,R.drawable.eggplant,R.drawable.eggs,R.drawable.filleted_fish,R.drawable.fish,R.drawable.french_fries,R.drawable.garlic,R.drawable.grapes,R.drawable.hamburger,R.drawable.hazelnut,R.drawable.honey,R.drawable.hops,R.drawable.horse,R.drawable.hot_chocolate,R.drawable.hot_dog,R.drawable.kebab,R.drawable.kiwi,R.drawable.lettuce,R.drawable.macaron,R.drawable.melon,R.drawable.milk,R.drawable.mushroom,R.drawable.nachos,R.drawable.noodles,R.drawable.nut,R.drawable.octopus,R.drawable.olive_oil,R.drawable.onion,R.drawable.pancake,R.drawable.paprika,R.drawable.peanuts,R.drawable.pear,R.drawable.peas,R.drawable.pig,R.drawable.pineapple,R.drawable.pizza,R.drawable.plum,R.drawable.pomegranate,R.drawable.potato,R.drawable.prawn,R.drawable.rack_of_lamb,R.drawable.raspberry,R.drawable.sack_of_flour,R.drawable.sesame,R.drawable.sheep,R.drawable.shellfish,R.drawable.soda_bottle,R.drawable.soy,R.drawable.spaghetti,R.drawable.steak,R.drawable.strawberry,R.drawable.sugar,R.drawable.sugar_cubes,R.drawable.sushi,R.drawable.sweet_potato,R.drawable.sweetener,R.drawable.salami,R.drawable.taco,R.drawable.tea,R.drawable.tomato,R.drawable.watermelon,R.drawable.wine_bottle,R.drawable.wrap};
+        String[] list={"alap","apple","asparagus","avocado","bacon","banana","banana_split","bavarian_pretzel",
+                "beer","beet","bento","birthday_cake",
+                "bread","broccoli","bull","cabbage","cafe","carrot","celery","checklist",
+                "cheese","cherry","chicken","chili_pepper","cinnamon_roll","citrus",
+                "coconut_cocktail","cookies","corn","cotton_candy","cow","crab","cucumber",
+                "cupcake","dim_sum","dolmades","doughnut","dragon_fruit","duck","durian",
+                "eggplant","eggs","filleted_fish","fish","french_fries","garlic","grapes",
+                "hamburger","hazelnut","honey","hops","horse","hot_chocolate","hot_dog",
+                "kebab","kiwi","lettuce","macaron","melon","milk","mushroom","nachos",
+                "noodles","nut","octopus","olive_oil","onion","pancake","paprika","peanuts",
+                "pear","peas","pig","pineapple","pizza","plum","pomegranate","potato",
+                "prawn","rack_of_lamb","raspberry","sack_of_flour","sesame","sheep",
+                "shellfish","soda_bottle","soy","spaghetti","steak","strawberry",
+                "sugar","sugar_cubes","sushi","sweet_potato","sweetener","salami",
+                "taco","tea","tomato","watermelon","wine_bottle","wrap","milk_shake",
+                "yoghurt","rice","whisky","vinegare","salt","popcorn","peach","orange",
+                "oil","muffin","mayo","icecream","ham","croissant","jelly","bonbon",
+                "black_pepper","kechup","mustar"};
+        String[] list_hun={"alap","Alma","Spárga","Avokádó","Bacon","Banán","Banán split",
+                "Perec","Sőr","Cékla","bento","Szülinapi torta","Kenyér","Brokkoli",
+                "Marha hús","Káposzta","Kávé","Répa","Zeller","Bevásárló lista","Sajt",
+                "Cseresznye","Csirke hús","Chili","Fahéj rúd","Citrom","Kókusz koktél",
+                "Cookies","Kukorica","Vatta cukor ","Tehén","Rák","uborka","Cupcake",
+                "Dim sum","Dolmades","Fánk","Sárkány gyümölcs","Kacsa","Durian","Padlizsán",
+                "Tojás","Halfilé","Hal","Sültkrumpli","Fokhagyma","Szőlő","Hamburger",
+                "Mogyoró","Méz","Komló","Ló","Forró csoki","Hot dog","Kebab","Kiwi",
+                "Kerti saláta","Macaron","Sárga dinnye","Tej","Gomba","Nachos","Tészta",
+                "Makk","Polip","Olivaolaj","Hagyma","Palacsinta","Paprika","Mogyoró",
+                "Körte","Cukorborsó","Sertés","Ananász","Pizza","Szilva","Gránátalma",
+                "Krumpli","Garnéla","Bárány borda","Málna","Liszt","Szezám","Bárány",
+                "Kagyló","Szóda","Szója","Spagetti","Steak","Eper","Cukor","Kocka cukor",
+                "Sushi","Édes krumpli","Édesítőszer","Szalámi","Taco","Tea","Paradicsom",
+                "Görög dinnye","Bor","Wrap","Tej shake","Joghurt","Rizs","Whisky","Ecet",
+                "Só","Popcorn","Barack","Narancs","Sütő olaj","Muffin","Majonéz","Jégkrém",
+                "Sonka","Croissant","Zselé","Bonbon","Fekete bors","Kechup","Mustár"};
+        int[] images={R.drawable.alap,R.drawable.apple,R.drawable.asparagus,
+    R.drawable.avocado,R.drawable.bacon,R.drawable.banana,R.drawable.banana_split,
+                R.drawable.bavarian_pretzel,R.drawable.beer,R.drawable.beet,
+                R.drawable.bento,R.drawable.birthday_cake,R.drawable.bread,
+                R.drawable.broccoli,R.drawable.bull,R.drawable.cabbage,
+                R.drawable.cafe,R.drawable.carrot,R.drawable.celery,
+                R.drawable.checklist,R.drawable.cheese,R.drawable.cherry,
+                R.drawable.chicken,R.drawable.chili_pepper,
+                R.drawable.cinnamon_roll,R.drawable.citrus,R.drawable.coconut_cocktail,
+                R.drawable.cookies,R.drawable.corn,R.drawable.cotton_candy,R.drawable.cow,
+                R.drawable.crab,R.drawable.cucumber,R.drawable.cupcake,R.drawable.dim_sum
+                ,R.drawable.dolmades,R.drawable.doughnut,R.drawable.dragon_fruit,
+                R.drawable.duck,R.drawable.durian,R.drawable.eggplant,R.drawable.eggs,
+                R.drawable.filleted_fish,R.drawable.fish,R.drawable.french_fries,
+                R.drawable.garlic,R.drawable.grapes,R.drawable.hamburger,R.drawable.hazelnut,
+                R.drawable.honey,R.drawable.hops,R.drawable.horse,R.drawable.hot_chocolate,
+                R.drawable.hot_dog,R.drawable.kebab,R.drawable.kiwi,R.drawable.lettuce,
+                R.drawable.macaron,R.drawable.melon,R.drawable.milk,R.drawable.mushroom,
+                R.drawable.nachos,R.drawable.noodles,R.drawable.nut,R.drawable.octopus,
+                R.drawable.olive_oil,R.drawable.onion,R.drawable.pancake,R.drawable.paprika,
+                R.drawable.peanuts,R.drawable.pear,R.drawable.peas,R.drawable.pig,
+                R.drawable.pineapple,R.drawable.pizza,R.drawable.plum,R.drawable.pomegranate,
+                R.drawable.potato,R.drawable.prawn,R.drawable.rack_of_lamb,R.drawable.raspberry,
+                R.drawable.sack_of_flour,R.drawable.sesame,R.drawable.sheep,R.drawable.shellfish,
+                R.drawable.soda_bottle,R.drawable.soy,R.drawable.spaghetti,R.drawable.steak,
+                R.drawable.strawberry,R.drawable.sugar,R.drawable.sugar_cubes,R.drawable.sushi,
+                R.drawable.sweet_potato,R.drawable.sweetener,R.drawable.salami,R.drawable.taco,
+                R.drawable.tea,R.drawable.tomato,R.drawable.watermelon,R.drawable.wine_bottle,
+                R.drawable.wrap,R.drawable.milch_sake,R.drawable.yoghurt,R.drawable.rice,
+                R.drawable.whisky,R.drawable.vinagera,R.drawable.salt,R.drawable.popcorn,
+                R.drawable.peach,R.drawable.orange,R.drawable.oil,R.drawable.muffin,
+                R.drawable.mayo,R.drawable.icecream,R.drawable.hame,R.drawable.croissant,
+                R.drawable.jelly,R.drawable.bonbon,R.drawable.black_pepper,R.drawable.kechup,
+                R.drawable.mustar};
         item movie = moviesList.get(position);
         holder.name.setText(movie.getName());
         holder.menny.setText(movie.getMenny());
@@ -52,13 +119,19 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.MyViewHolder> 
         int found=0;
         for(int i=0;i<list.length;i++)
         {
-          /*  Log.d("item",movie.getName());
-            Log.d("item2",list[i]);*/
+
             if(list[i].equals(movie.getName())){
                 found=i;
                 break;
             }
-           /// Log.d("found",found+"");
+        }
+        for(int i=0;i<list_hun.length;i++)
+        {
+
+            if(list_hun[i].equals(movie.getName())){
+                found=i;
+                break;
+            }
         }
 
        holder.img.setImageResource(images[found]);

@@ -26,7 +26,7 @@ public class databaseHelper extends SQLiteOpenHelper {
     public databaseHelper(Context paramContext)
 
     {
-        super(paramContext, DatabaseName, null, 3);
+        super(paramContext, DatabaseName, null, 4);
     }
 
     /**
@@ -88,7 +88,7 @@ public class databaseHelper extends SQLiteOpenHelper {
     public  Cursor getItems(String id)
     {
         SQLiteDatabase localSQLiteDatabase = getReadableDatabase();
-        String str1 = "SELECT * FROM "+iTableName+" where OWNER='"+id+"'";
+        String str1 = "SELECT * FROM "+iTableName+" where OWNER='"+id+"' ORDER BY Name ASC";
         //  Log.d("SQL", str1);
         Cursor localCursor = localSQLiteDatabase.rawQuery(str1, null);
         return localCursor;
