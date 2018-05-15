@@ -54,7 +54,8 @@
             android:layout_below="@+id/name"
             android:layout_toStartOf="@+id/image"
             android:text="teszt"
-            android:textColor="@color/title" />
+            android:textColor="@color/title"
+            android:layout_toLeftOf="@+id/image" />
 
         <TextView
             android:id="@+id/db"
@@ -63,7 +64,8 @@
             android:layout_alignStart="@+id/name"
             android:layout_below="@+id/name"
             android:text="teszt"
-            android:textColor="@color/year" />
+            android:textColor="@color/year"
+            android:layout_alignLeft="@+id/name" />
 
     <ImageView
         android:id="@+id/image"

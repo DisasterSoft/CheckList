@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Bevásárló lista</string>
     <string name="admod">ca-app-pub-7036765120364615/4669858706</string>
-    <string name="prompt_email"> FElhasználónév</string>
+    <string name="prompt_email"> Felhasználónév</string>
     <string name="plsFillUsername">Kérem írjon be egy felhasználó nevet.</string>
     <string name="plsFillitem">Kérem írjon be néhány dolgot amit meg akar venni</string>
-    <string name="login">REgisztráció és bejelntkezés</string>
+    <string name="login">Regisztráció és bejelntkezés</string>
     <string name="welcome">Üdvözlöm kedves </string>
     <string name="makeList">Lista készítése </string>
     <string name="viewList">Bevásárlás </string>
