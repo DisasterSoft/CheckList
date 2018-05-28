@@ -6,8 +6,8 @@ android {
         applicationId "com.ewulusen.disastersoft.checklist"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 4
-        versionName "1.0.1"
+        versionCode 5
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -30,4 +30,5 @@ dependencies {
     implementation 'com.google.android.gms:play-services-ads:15.0.1'
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
+    implementation 'com.google.android.ads.consent:consent-library:1.0.1'
 }

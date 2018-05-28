@@ -19,6 +19,7 @@
     <string name="itemSaved">List saved! </string>
     <string name="noList">You dont have any lists! Please make some. </string>
     <string name="hintadd">If you added the wrong item, just swipe it to left and it is deleted. </string>
+    <string name="pubid">pub-7036765120364615</string>
     <string-array name="list_of_items">
         <item>alap</item>
         <item>apple</item>

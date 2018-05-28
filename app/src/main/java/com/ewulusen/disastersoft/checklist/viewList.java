@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -68,9 +69,12 @@ public class viewList extends AppCompatActivity implements recyclerItemTouchHelp
         ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new recyclerItemTouchHelper(0, ItemTouchHelper.LEFT, (recyclerItemTouchHelper.RecyclerItemTouchHelperListener) this);
         new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(lista);
         MobileAds.initialize(this,getString(R.string.admod));
-
-        mAdView = findViewById(R.id.adView3);
-        AdRequest adRequest = new AdRequest.Builder().build();
+        Bundle extras = new Bundle();
+        extras.putString("npa", "1");
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addNetworkExtrasBundle(AdMobAdapter.class, extras)
+                .build();
         mAdView.loadAd(adRequest);
     }
     @Override

@@ -18,6 +18,7 @@
     <string name="itemSaved">Lista elmentve! </string>
     <string name="noList">Még nem készítettél listát, kérlek csinálj egyet. </string>
     <string name="hintadd">Ha rossz elemet adott hozzá, csak húzza jobra alistába, és törölve van. </string>
+    <string name="pubid">pub-7036765120364615</string>
     <string-array name="list_of_items">
         <item>alap</item>
         <item>Alma</item>
