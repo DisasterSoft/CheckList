@@ -93,7 +93,7 @@ public class makeList extends AppCompatActivity implements recyclerItemTouchHelp
         MobileAds.initialize(this,getString(R.string.admod));
         Bundle extras = new Bundle();
         extras.putString("npa", "1");
-        mAdView = findViewById(R.id.adView);
+        mAdView = findViewById(R.id.adView2);
         AdRequest adRequest = new AdRequest.Builder()
                 .addNetworkExtrasBundle(AdMobAdapter.class, extras)
                 .build();
