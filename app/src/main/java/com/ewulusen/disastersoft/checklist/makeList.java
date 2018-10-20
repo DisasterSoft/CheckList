@@ -1,6 +1,7 @@
 package com.ewulusen.disastersoft.checklist;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -33,9 +34,6 @@ public class makeList extends AppCompatActivity implements recyclerItemTouchHelp
     public AutoCompleteTextView item;
     private Button add,back,save;
     private RecyclerView lista;
-    public EditText db;
-    public Spinner spinner;
-    private ArrayAdapter sAdapter;
     private itemAdapter iAdapter;
     public List<item> movieList = new ArrayList<>();
     private AdView mAdView;
@@ -52,24 +50,20 @@ public class makeList extends AppCompatActivity implements recyclerItemTouchHelp
         back=findViewById(R.id.back);
         save=findViewById(R.id.save);
         lista=findViewById(R.id.lista);
-        spinner=findViewById(R.id.spinner);
-        db=findViewById(R.id.db);
         String[] items = getResources().getStringArray(R.array.list_of_items);
         ArrayAdapter itemAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,items);
         item.setAdapter(itemAdapter);
-        String[] spinner_items = getResources().getStringArray(R.array.list_of_spinner);
-        sAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,spinner_items);
-        spinner.setAdapter(sAdapter);
         iAdapter=new itemAdapter(movieList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         lista.setLayoutManager(mLayoutManager);
         lista.setItemAnimator(new DefaultItemAnimator());
         lista.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         lista.setAdapter(iAdapter);
+        fillAdapter();
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addElem(item.getText().toString(),spinner.getSelectedItem().toString(),db.getText().toString());
+                addElem(item.getText().toString());
             }
         });
         back.setOnClickListener(new View.OnClickListener() {
@@ -99,21 +93,19 @@ public class makeList extends AppCompatActivity implements recyclerItemTouchHelp
                 .build();
         mAdView.loadAd(adRequest);
     }
-    private void addElem(String item,String itemmenny,String db)
+    private void addElem(String items)
     {
-        if(item.isEmpty())
+        if(items.isEmpty())
         {
             Toast.makeText(makeList.this, getString(R.string.plsFillitem), Toast.LENGTH_LONG).show();
         }
         else
         {
-            item i=new item(item,itemmenny,db);
+            item i=new item(items);
             movieList.add(i);
             iAdapter.notifyDataSetChanged();
             Toast.makeText(makeList.this, getString(R.string.itemAdded), Toast.LENGTH_SHORT).show();
-            this.db.setText("");
             this.item.setText("");
-            spinner.setSelection(0);
         }
     }
     @Override
@@ -137,6 +129,21 @@ public class makeList extends AppCompatActivity implements recyclerItemTouchHelp
         userDB.saveData(movieList,id);
        // userDB.databasePrinter(id);
         Toast.makeText(makeList.this, getString(R.string.itemSaved), Toast.LENGTH_SHORT).show();
+
+    }
+    public void fillAdapter() {
+        Log.d("id",id);
+        Cursor lcursor = userDB.getItems(id);
+        Log.d("listcoursecount",lcursor.getCount()+"");
+
+        if (lcursor.getCount() > 0) {
+            while (lcursor.moveToNext()) {
+                item i = new item(lcursor.getString(lcursor.getColumnIndex("Name")));
+                movieList.add(i);
+
+            }
+            iAdapter.notifyDataSetChanged();
+        }
 
     }
 }

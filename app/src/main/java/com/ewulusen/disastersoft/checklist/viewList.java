@@ -100,7 +100,7 @@ public class viewList extends AppCompatActivity implements recyclerItemTouchHelp
 
         if (lcursor.getCount() > 0) {
             while (lcursor.moveToNext()) {
-                item i = new item(lcursor.getString(lcursor.getColumnIndex("Name")), lcursor.getString(lcursor.getColumnIndex("TYPE")), lcursor.getString(lcursor.getColumnIndex("DB")));
+                item i = new item(lcursor.getString(lcursor.getColumnIndex("Name")));
                 movieList.add(i);
 
             }

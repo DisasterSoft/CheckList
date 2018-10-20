@@ -2,10 +2,10 @@
     <string name="app_name">Shopping List</string>
     <string name="admod">ca-app-pub-7036765120364615/4669858706</string>
     <!--string name="admod">ca-app-pub-3940256099942544/6300978111</string-->
-    <string name="prompt_email"> Username</string>
-    <string name="plsFillUsername">Please enter some username</string>
+    <string name="prompt_email"> Store name</string>
+    <string name="plsFillUsername">Please enter some store where you want to shop</string>
     <string name="plsFillitem">Please enter some item to buy</string>
-    <string name="login">Register and login</string>
+    <string name="login">To the List!</string>
     <string name="welcome">Welcome dear </string>
     <string name="makeList">Make List </string>
     <string name="viewList">Shopping </string>
@@ -21,131 +21,186 @@
     <string name="hintadd">If you added the wrong item, just swipe it to left and it is deleted. </string>
     <string name="pubid">pub-7036765120364615</string>
     <string-array name="list_of_items">
-        <item>alap</item>
-        <item>apple</item>
+        <item>apple juice</item>
         <item>asparagus</item>
         <item>avocado</item>
-        <item>bacon</item>
         <item>banana</item>
-        <item>banana_split</item>
-        <item>bavarian_pretzel</item>
+        <item>banana split</item>
+        <item>bean</item>
         <item>beer</item>
-        <item>beet</item>
         <item>bento</item>
-        <item>birthday_cake</item>
+        <item>birthday cake</item>
+        <item>black pepper</item>
+        <item>bolognese</item>
+        <item>bonbon</item>
         <item>bread</item>
         <item>broccoli</item>
-        <item>bull</item>
+        <item>brochette</item>
+        <item>bun</item>
+        <item>burrito</item>
+        <item>butter</item>
         <item>cabbage</item>
-        <item>cafe</item>
+        <item>candy</item>
+        <item>canne</item>
         <item>carrot</item>
         <item>celery</item>
-        <item>Shopping List</item>
         <item>cheese</item>
+        <item>cheezy sauce</item>
         <item>cherry</item>
-        <item>chicken</item>
-        <item>chili_pepper</item>
-        <item>cinnamon_roll</item>
-        <item>citrus</item>
-        <item>coconut_cocktail</item>
-        <item>cookies</item>
-        <item>corn</item>
-        <item>cotton_candy</item>
+        <item>chicken bits</item>
+        <item>chicken leg</item>
+        <item>chiken</item>
+        <item>chilli</item>
+        <item>chinabox</item>
+        <item>chips</item>
+        <item>chopped meat</item>
+        <item>cinnamon roll</item>
+        <item>cloudberry</item>
+        <item>cloudberry jam</item>
+        <item>coconut cocktail</item>
+        <item>coffee</item>
+        <item>coktail</item>
+        <item>cookie</item>
+        <item>coriander</item>
+        <item>corndog</item>
+        <item>cotton candy</item>
         <item>cow</item>
         <item>crab</item>
+        <item>crawfish</item>
+        <item>croissant</item>
         <item>cucumber</item>
         <item>cupcake</item>
-        <item>dim_sum</item>
-        <item>dolmades</item>
+        <item>dim sum</item>
         <item>doughnut</item>
-        <item>dragon_fruit</item>
+        <item>dolmades</item>
+        <item>dragon fruit</item>
+        <item>dressing</item>
         <item>duck</item>
         <item>durian</item>
+        <item>egg</item>
         <item>eggplant</item>
-        <item>eggs</item>
-        <item>filleted_fish</item>
+        <item>espresso</item>
+        <item>filleted fish</item>
         <item>fish</item>
-        <item>french_fries</item>
+        <item>french fries</item>
+        <item>fried chicken</item>
         <item>garlic</item>
+        <item>grapefruit</item>
         <item>grapes</item>
+        <item>green olive</item>
+        <item>guava</item>
+        <item>ham</item>
         <item>hamburger</item>
         <item>hazelnut</item>
         <item>honey</item>
-        <item>kechup</item>
-        <item>oreo</item>
-        <item>ice cream</item>
         <item>hops</item>
-        <item>horse</item>
-        <item>hot_chocolate</item>
-        <item>hot_dog</item>
+        <item>hot chocolate</item>
+        <item>hot dog</item>
+        <item>hot sauce</item>
+        <item>ice</item>
+        <item>icecream</item>
+        <item>jelly</item>
         <item>kebab</item>
+        <item>kechup</item>
         <item>kiwi</item>
+        <item>lasangne</item>
+        <item>leg steak</item>
+        <item>lemon</item>
         <item>lettuce</item>
+        <item>loin rack</item>
+        <item>lollipop</item>
         <item>macaron</item>
-        <item>melon</item>
+        <item>mango</item>
+        <item>mangosteen</item>
+        <item>marmalade</item>
+        <item>mayo</item>
+        <item>milch shake</item>
         <item>milk</item>
+        <item>muffin</item>
         <item>mushroom</item>
+        <item>muskmelon</item>
+        <item>mustar</item>
         <item>nachos</item>
         <item>noodles</item>
         <item>nut</item>
+        <item>oats</item>
         <item>octopus</item>
-        <item>olive_oil</item>
+        <item>oil</item>
+        <item>olive oil</item>
         <item>onion</item>
+        <item>onion sauce</item>
+        <item>onion rings</item>
+        <item>orange</item>
+        <item>orange juice</item>
+        <item>oysters</item>
         <item>pancake</item>
         <item>paprika</item>
-        <item>peanuts</item>
+        <item>parma ham</item>
+        <item>parsnip</item>
+        <item>peach</item>
+        <item>peanut</item>
         <item>pear</item>
         <item>peas</item>
+        <item>pepitas</item>
+        <item>pie</item>
         <item>pig</item>
-        <item>pineapple</item>
+        <item>pinapple</item>
         <item>pizza</item>
         <item>plum</item>
         <item>pomegranate</item>
+        <item>popcorn</item>
         <item>potato</item>
         <item>prawn</item>
-        <item>rack_of_lamb</item>
-        <item>raspberry</item>
-        <item>sack_of_flour</item>
+        <item>pretzel</item>
+        <item>prime rib</item>
+        <item>pumpkin</item>
+        <item>rack of lamb</item>
+        <item>rack of ribs</item>
+        <item>radish</item>
+        <item>ramen</item>
+        <item>raspberries</item>
+        <item>rice</item>
+        <item>rolled roast</item>
+        <item>sace</item>
+        <item>sack of flour</item>
+        <item>salami</item>
+        <item>salate</item>
+        <item>salmon</item>
+        <item>salt</item>
+        <item>salt pork</item>
+        <item>sardinie</item>
+        <item>sausage</item>
         <item>sesame</item>
+        <item>sesame oil</item>
         <item>sheep</item>
-        <item>shellfish</item>
-        <item>soda_bottle</item>
+        <item>soda bottle</item>
+        <item>soup</item>
         <item>soy</item>
         <item>spaghetti</item>
+        <item>spinach</item>
         <item>steak</item>
         <item>strawberry</item>
         <item>sugar</item>
-        <item>sugar_cubes</item>
+        <item>sugar cubes</item>
         <item>sushi</item>
-        <item>sweet_potato</item>
+        <item>sweet potato</item>
         <item>sweetener</item>
-        <item>salami</item>
         <item>taco</item>
         <item>tea</item>
         <item>tomato</item>
-        <item>watermelon</item>
-        <item>wine_bottle</item>
-        <item>wrap</item>
-        <item>milk_shake</item>
-        <item>yoghurt</item>
-        <item>rice</item>
+        <item>tortilla</item>
+        <item>turnip</item>
+        <item>vinagera</item>
+        <item>waffles</item>
+        <item>watter melone</item>
         <item>whisky</item>
-        <item>vinegare</item>
-        <item>salt</item>
-        <item>popcorn</item>
-        <item>peach</item>
-        <item>orange</item>
-        <item>oil</item>
-        <item>muffin</item>
-        <item>mayo</item>
-        <item>icecream</item>
-        <item>ham</item>
-        <item>croissant</item>
-        <item>jelly</item>
-        <item>bonbon</item>
-        <item>black_pepper</item>
-        <item>kechup</item>
-        <item>mustar</item>
+        <item>whortleberry</item>
+        <item>whortleberry jelly</item>
+        <item>wine bottle</item>
+        <item>wrap</item>
+        <item>yoghurt</item>
+        <item>zucchini</item>
+
 
 
     </string-array>

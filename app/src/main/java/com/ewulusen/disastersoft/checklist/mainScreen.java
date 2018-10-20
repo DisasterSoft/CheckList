@@ -32,10 +32,10 @@ public class mainScreen extends AppCompatActivity {
         userDB = new databaseHelper(this);
         Cursor loCursor=userDB.getName(id);
         loCursor.moveToNext();
-        welcome=findViewById(R.id.welcome);
+
         makeList=findViewById(R.id.MakeList);
         viewLists=findViewById(R.id.viewList);
-        welcome.setText(getString(R.string.welcome)+" "+loCursor.getString(0));
+
         makeList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

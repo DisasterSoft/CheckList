@@ -1,13 +1,12 @@
 package com.ewulusen.disastersoft.checklist;
 
 public class item {
-    private String name,menny,db;
+    private String name;
 
 
-    public item(String name,String menny,String db)
+    public item(String name)
     {
-        this.db=db;
-        this.menny=menny;
+
         this.name=name;
     }
     public String getName()
@@ -18,22 +17,7 @@ public class item {
     {
         this.name=name;
     }
-    public String getMenny()
-    {
-        return menny;
-    }
-    public  void setMenny(String menny)
-    {
-        this.menny=menny;
-    }
-    public String getDb()
-    {
-        return db;
-    }
-    public  void setDb(String db)
-    {
-        this.db=db;
-    }
+
 
 
 }

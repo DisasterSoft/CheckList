@@ -89,7 +89,7 @@ public class databaseHelper extends SQLiteOpenHelper {
     {
         SQLiteDatabase localSQLiteDatabase = getReadableDatabase();
         String str1 = "SELECT * FROM "+iTableName+" where OWNER='"+id+"' ORDER BY Name ASC";
-        //  Log.d("SQL", str1);
+          Log.d("SQL", str1);
         Cursor localCursor = localSQLiteDatabase.rawQuery(str1, null);
         return localCursor;
     }
@@ -101,8 +101,6 @@ public class databaseHelper extends SQLiteOpenHelper {
         for(int i=0;i<lista.size();i++) {
             item it = (item) lista.get(i);
             localContentValues.put("Name", it.getName());
-            localContentValues.put("DB", it.getDb());
-            localContentValues.put("TYPE", it.getMenny());
             localContentValues.put("OWNER", id);
             localSQLiteDatabase.insert(iTableName, null, localContentValues);
             localContentValues.clear();
