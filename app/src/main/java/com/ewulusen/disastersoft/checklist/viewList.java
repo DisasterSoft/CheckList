@@ -59,7 +59,7 @@ public class viewList extends AppCompatActivity implements recyclerItemTouchHelp
             }
         });
         lista=findViewById(R.id.lista);
-        iAdapter=new itemAdapter(movieList);
+        iAdapter=new itemAdapter(movieList,this);
         fillAdapter();
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         lista.setLayoutManager(mLayoutManager);

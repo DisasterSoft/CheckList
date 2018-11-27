@@ -3,24 +3,126 @@
     <string name="admod">ca-app-pub-7036765120364615/4669858706</string>
     <!--string name="admod">ca-app-pub-3940256099942544/6300978111</string-->
     <string name="prompt_email"> Store name</string>
-    <string name="plsFillUsername">Please enter some store where you want to shop</string>
-    <string name="plsFillitem">Please enter some item to buy</string>
+    <string name="duplicateName">You already have a list of these</string>
+    <string name="yourlist">Your Lists</string>
     <string name="login">To the List!</string>
-    <string name="welcome">Welcome dear </string>
-    <string name="makeList">Make List </string>
+    <string name="welcome">List Name</string>
+    <string name="makeList">Make New List </string>
     <string name="viewList">Shopping </string>
+    <string name="mark">Select</string>
     <string name="item">Item </string>
     <string name="num">Number </string>
     <string name="add">Add </string>
     <string name="back">Back </string>
     <string name="save">Save </string>
     <string name="delete">Delete </string>
+    <string name="copy">Copy </string>
+    <string name="edit">Edit </string>
+    <string name="rename">Rename </string>
     <string name="itemAdded">Item added </string>
     <string name="itemSaved">List saved! </string>
-    <string name="noList">You dont have any lists! Please make some. </string>
+    <string name="itemNotNamed">Please give the list a name!</string>
+    <string name="noList">You don\'t have any items in Your lists! Please fill it.</string>
     <string name="hintadd">If you added the wrong item, just swipe it to left and it is deleted. </string>
     <string name="pubid">pub-7036765120364615</string>
     <string-array name="list_of_items">
+        <item>yoyo</item>
+        <item>tupper_ware</item>
+        <item>t-shirt</item>
+        <item>baking sheet</item>
+        <item>torch</item>
+        <item>toothbrush</item>
+        <item>tool</item>
+        <item>toilet_paper</item>
+        <item>toaster</item>
+        <item>gingerbread oven</item>
+        <item>thongs</item>
+        <item>sunglasses</item>
+        <item>stapler</item>
+        <item>spice</item>
+        <item>socks</item>
+        <item>liquid</item>
+        <item>soap</item>
+        <item>rinse</item>
+        <item>shovel</item>
+        <item>scissors</item>
+        <item>scale</item>
+        <item>rouge</item>
+        <item>rolling-pin</item>
+        <item>record</item>
+        <item>pushpin</item>
+        <item>powder</item>
+        <item>pottea</item>
+        <item>plunger</item>
+        <item>plate</item>
+        <item>pizza_cutter</item>
+        <item>pill_bottle</item>
+        <item>pet_dish</item>
+        <item>pencil</item>
+        <item>pen</item>
+        <item>peeler</item>
+        <item>parfume</item>
+        <item>pantyhose</item>
+        <item>pants</item>
+        <item>paint</item>
+        <item>oven</item>
+        <item>nail-polish</item>
+        <item>mincer</item>
+        <item>microwave</item>
+        <item>marking_pin</item>
+        <item>make_up</item>
+        <item>liquid-soap</item>
+        <item>knife</item>
+        <item>jack-o-lantern</item>
+        <item>house-cleaning</item>
+        <item>hook</item>
+        <item>hand-blender</item>
+        <item>handbag</item>
+        <item>gyufa</item>
+        <item>greenpot</item>
+        <item>green</item>
+        <item>glue</item>
+        <item>glass</item>
+        <item>ginger</item>
+        <item>fridge</item>
+        <item>fork</item>
+        <item>facial-tissue</item>
+        <item>facial</item>
+        <item>eyelash</item>
+        <item>eggclock</item>
+        <item>duster</item>
+        <item>cup</item>
+        <item>cosmetics</item>
+        <item>corkscrew</item>
+        <item>cooking_pot</item>
+        <item>cooking_spoon</item>
+        <item>cooker</item>
+        <item>containerglass</item>
+        <item>container</item>
+        <item>comb</item>
+        <item>color_pencils</item>
+        <item>coffee-pot</item>
+        <item>coffee-machine</item>
+        <item>cloves</item>
+        <item>chair</item>
+        <item>chain</item>
+        <item>canoppener</item>
+        <item>candel</item>
+        <item>bulb</item>
+        <item>brick</item>
+        <item>bottle</item>
+        <item>blue</item>
+        <item>blender</item>
+        <item>batteryborrel</item>
+        <item>battery</item>
+        <item>alap</item>
+        <item>basket</item>
+        <item>bandages</item>
+        <item>bag</item>
+        <item>baby</item>
+        <item>apron</item>
+        <item>aluminum-foil</item>
+        <item>accumulator</item>
         <item>apple juice</item>
         <item>asparagus</item>
         <item>avocado</item>
@@ -200,17 +302,7 @@
         <item>wrap</item>
         <item>yoghurt</item>
         <item>zucchini</item>
-
-
-
     </string-array>
-    <string-array name="list_of_spinner">
-        <item>-Choose-</item>
-        <item>kg</item>
-        <item>pack</item>
-        <item>g</item>
-        <item>ml</item>
-        <item>l</item>
-        <item>piece</item>
-    </string-array>
+
+    <string name="plsFillitem">Please enter some item to buy</string>
 </resources>

@@ -1,0 +1,309 @@
+<resources>
+        <string name = "app_name"> Einkaufsliste </string>
+        <string name = "admod"> ca-app-pub-7036765120364615/4669858706 </string>
+        <!-- string name = "admod"> ca-app-pub-3940256099942544/6300978111 </string -->
+        <string name = "prompt_email"> Speichername </string>
+        <string name="duplicateName">Sie haben bereits eine Liste von diesen</string>
+       
+        <string name = "login"> Zur Liste! </string>
+        <string name="yourlist">Ihre Listen</string>
+        <string name = "welcome"> List Name </string>
+        <string name="makeList">Neue Liste erstellen </string>
+        <string name = "viewList"> Einkaufen </string>
+        <string name="mark">Wählen</string>
+        <string name = "item"> item </string>
+        <string name = "num"> Nummer </string>
+        <string name = "add"> Hinzufügen </string>
+        <string name = "back"> Zurück </string>
+        <string name = "save"> Speichern </string>
+        <string name = "delete"> Löschen </string>
+        <string name="copy">Kopieren</string>
+        <string name="edit">Bearbeiten</string>
+        <string name="rename">Umbenennen</string>
+        <string name = "itemAdded"> item hinzugefügt </string>
+        <string name = "itemSaved"> Liste gespeichert! </string>
+        <string name="itemNotNamed">Bitte given sie dass list eine name!</string>
+        <string name = "noList"> Sie haben keine Artikel in Ihren Liste! Bitte füllen Sie es aus. </string>
+        <string name = "hintadd"> Wenn Sie das falsche item hinzugefügt haben, wischen Sie es einfach nach links und es wird gelöscht. </string>
+        <string name = "pubid"> pub-7036765120364615 </string>
+        <string-array name = "list_of_items">
+        <item>yoyo</item>
+    <item>tupperware</item>
+    <item>t-shirt</item>
+    <item>kuchenblech</item>
+    <item>fackel</item>
+    <item>zahnbürste</item>
+    <item>werkzeug</item>
+    <item>toilettenpapier</item>
+    <item>toaster</item>
+    <item>lebkuchenofen</item>
+    <item>riemen</item>
+    <item>sonnenbrille</item>
+    <item>hefter</item>
+    <item>würzen</item>
+    <item>socken</item>
+    <item>flüssigkeit</item>
+    <item>seife</item>
+    <item>spüler</item>
+    <item>schaufel</item>
+    <item>schere</item>
+    <item>rahmen</item>
+    <item>rouge</item>
+    <item>nudelholz</item>
+    <item>aufzeichnung</item>
+    <item>druckbolzen</item>
+    <item>pulver</item>
+    <item>tea</item>
+    <item>kolben</item>
+    <item>teller</item>
+    <item>pizza-schneider</item>
+    <item>tablettendose</item>
+    <item>pet_dish</item>
+    <item>bleistift</item>
+    <item>stift</item>
+    <item>schäler</item>
+    <item>parfüm</item>
+    <item>strumpfhose</item>
+    <item>hose</item>
+    <item>farbe</item>
+    <item>ofen</item>
+    <item>nagelpolitur</item>
+    <item>fleischwolf</item>
+    <item>mikrowelle</item>
+    <item>markierungsstift</item>
+    <item>bilden</item>
+    <item>flüssigseife</item>
+    <item>messer</item>
+    <item>kürbislaterne</item>
+    <item>hausputz</item>
+    <item>haken</item>
+    <item>stabmixer</item>
+    <item>handtasche</item>
+    <item>streichhölzer</item>
+    <item>greenpot</item>
+    <item>grün</item>
+    <item>kleben</item>
+    <item>glas</item>
+    <item>ingwer</item>
+    <item>kühlschrank</item>
+    <item>gabel</item>
+    <item>kleenex</item>
+    <item>gesichts-</item>
+    <item>wimper</item>
+    <item>eieruhr</item>
+    <item>staubtuch</item>
+    <item>tasse</item>
+    <item>kosmetika</item>
+    <item>korkenzieher</item>
+    <item>kochtopf</item>
+    <item>kochlöffel</item>
+    <item>kocher</item>
+    <item>behälterglas</item>
+    <item>container</item>
+    <item>kamm</item>
+    <item>buntstifte</item>
+    <item>kaffeetasse</item>
+    <item>kaffee-machine</item>
+    <item>nelken</item>
+    <item>stuhl</item>
+    <item>kette</item>
+    <item>dosenöffener</item>
+    <item>candel</item>
+    <item>birne</item>
+    <item>backstein</item>
+    <item>flasche</item>
+    <item>blau</item>
+    <item>mixer</item>
+    <item>batteriebatterie</item>
+    <item>batterie</item>
+    <item>alap</item>
+    <item>korb</item>
+    <item>bandagen</item>
+    <item>tasche</item>
+    <item>baby</item>
+    <item>schürze</item>
+    <item>aluminiumfolie</item>
+    <item>akkumulator</item>
+    <item>apfelsaft </item>
+    <item>spargel </item>
+    <item>avocado </item>
+    <item>banane </item>
+    <item>bananensplit </item>
+    <item>bean </item>
+    <item>bier </item>
+    <item>bento </item>
+    <item>geburtstagskuchen </item>
+    <item>schwarzer pfeffer </item>
+    <item>bolognese </item>
+    <item>bonbon </item>
+    <item>brot </item>
+    <item>brokkoli </item>
+    <item>brochette </item>
+    <item>brötchen </item>
+    <item>burrito </item>
+    <item>butter </item>
+    <item>kohl </item>
+    <item>süßigkeiten </item>
+    <item>canne </item>
+    <item>karotte </item>
+    <item>sellerie </item>
+    <item>käse </item>
+    <item>cheezy sauce </item>
+    <item>kirsche </item>
+    <item>hühnchenstückchen </item>
+    <item>hühnerbein </item>
+    <item>chiken </item>
+    <item>chili </item>
+    <item>chinabox </item>
+    <item>chips </item>
+    <item>gehacktes fleisch </item>
+    <item>zimtschnecke </item>
+    <item>moltebeere </item>
+    <item>moltebeerenmarmelade </item>
+    <item>kokosnuss cocktail </item>
+    <item>kaffee </item>
+    <item>coktail </item>
+    <item>cookie </item>
+    <item>koriander </item>
+    <item>corndog </item>
+    <item>zuckerwatte </item>
+    <item>kuh </item>
+    <item>krabbe </item>
+    <item>langusten </item>
+    <item>croissant </item>
+    <item>gurke </item>
+    <item>cupcake </item>
+    <item>dim-summe </item>
+    <item>donut </item>
+    <item>dolmades </item>
+    <item>drachenfrucht </item>
+    <item>dressing </item>
+    <item>ente </item>
+    <item>durian </item>
+    <item>ei </item>
+    <item>aubergine </item>
+    <item>espresso </item>
+    <item>fischfilet </item>
+    <item>fisch </item>
+    <item>pommes frites </item>
+    <item>gebratenes huhn </item>
+    <item>knoblauch </item>
+    <item>grapefruit </item>
+    <item>trauben </item>
+    <item>grüne olive </item>
+    <item>guave </item>
+    <item>schinken </item>
+    <item>hamburger </item>
+    <item>haselnuss </item>
+    <item>honig </item>
+    <item>hops </item>
+    <item>heiße schokolade </item>
+    <item>hot dog </item>
+    <item>scharfe soße </item>
+    <item>eis </item>
+    <item>eis </item>
+    <item>gelee </item>
+    <item>kebab </item>
+    <item>kechup </item>
+    <item>kiwi </item>
+    <item>lasangne ​​</item>
+    <item>beinsteak </item>
+    <item>zitrone </item>
+    <item>salat </item>
+    <item>lendenablage </item>
+    <item>lutscher </item>
+    <item>macaron </item>
+    <item>mango </item>
+    <item>mangostan </item>
+    <item>marmelade </item>
+    <item>mayo </item>
+    <item>milchshake </item>
+    <item>milch </item>
+    <item>muffin </item>
+    <item>pilz </item>
+    <item>moschusmelone </item>
+    <item>mustar </item>
+    <item>nachos </item>
+    <item>nudeln </item>
+    <item>mutter </item>
+    <item>hafer </item>
+    <item>oktopus </item>
+    <item>öl </item>
+    <item>olivenöl </item>
+    <item>zwiebel </item>
+    <item>zwiebelsauce </item>
+    <item>zwiebelringe </item>
+    <item>orange </item>
+    <item>orangensaft </item>
+    <item>austern </item>
+    <item>pfannkuchen </item>
+    <item>paprika </item>
+    <item>parmaschinken </item>
+    <item>pastinake </item>
+    <item>pfirsich </item>
+    <item>erdnuss </item>
+    <item>birne </item>
+    <item>erbsen </item>
+    <item>pepitas </item>
+    <item>kuchen </item>
+    <item>schwein </item>
+    <item>pinapple </item>
+    <item>pizza </item>
+    <item>pflaume </item>
+    <item>granatapfel </item>
+    <item>popcorn </item>
+    <item> kartoffel </item>
+    <item> garnele </item>
+    <item> brezel </item>
+    <item> prime rib </item>
+    <item> kürbis </item>
+    <item> lammrücken</item>
+    <item>rippenrippen </item>
+    <item>rettich </item>
+    <item>ramen </item>
+    <item>himbeeren </item>
+    <item>reis </item>
+    <item>gerollter braten </item>
+    <item>sace </item>
+    <item>sack mehl </item>
+    <item>salami </item>
+    <item>salate </item>
+    <item>lachs </item>
+    <item>salt </item>
+    <item>salz schweinefleisch </item>
+    <item>sardinie </item>
+    <item>wurst </item>
+    <item>sesam </item>
+    <item>sesamöl </item>
+    <item>schaf </item>
+    <item>limonadenflasche </item>
+    <item>suppe </item>
+    <item>soja </item>
+    <item>spaghetti </item>
+    <item>spinat </item>
+    <item>steak</item>
+    <item>erdbeere </item>
+    <item>zucker </item>
+    <item>zuckerwürfel </item>
+    <item>sushi </item>
+    <item>süßkartoffel </item>
+    <item>süßstoff</item>
+    <item>taco </item>
+    <item>tee </item>
+    <item>tomate </item>
+    <item>tortilla </item>
+    <item>rübe </item>
+    <item>vinagera </item>
+    <item>waffeln </item>
+    <item>wassermelone </item>
+    <item>whisky </item>
+    <item>whortleberry </item>
+    <item>whortl erdbeergelee </item>
+    <item>weinflasche </item>
+    <item>wrap</item>
+    <item> joghurt </item>
+    <item>zucchini </item>
+</string-array>
+
+     <string name ="plsFillitem"> Geben Sie einen item ein, den Sie kaufen möchten </string>
+</resources>

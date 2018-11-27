@@ -2,211 +2,306 @@
     <string name="app_name">Bevásárló lista</string>
     <string name="admod">ca-app-pub-7036765120364615/4669858706</string>
     <string name="prompt_email">Bolt neve</string>
-    <string name="plsFillUsername">Kérem írjon be egy boltot ahonnan szeretne vásárolni.</string>
+    <string name="duplicateName">Már van ilyen nevű lista</string>
     <string name="plsFillitem">Kérem írjon be néhány dolgot amit meg akar venni</string>
     <string name="login">Tovább a listához</string>
-    <string name="welcome">Üdvözlöm kedves </string>
-    <string name="makeList">Lista készítése </string>
+    <string name="welcome">Lista Neve</string>
+    <string name="makeList">Új Lista készítése </string>
     <string name="viewList">Bevásárlás </string>
+    <string name="mark">Kiválaszt</string>
+    <string name="yourlist">Listáid</string>
     <string name="item">Elem </string>
     <string name="num">Szám </string>
     <string name="add">Hozzáad </string>
     <string name="back">Vissza </string>
     <string name="save">Mentés </string>
     <string name="delete">Törlés </string>
+    <string name="copy">Másolás </string>
+    <string name="edit">Szerkesztés </string>
+    <string name="rename">Átnevez</string>
     <string name="itemAdded">Elem hozzáadva </string>
     <string name="itemSaved">Lista elmentve! </string>
-    <string name="noList">Még nem készítettél listát, kérlek csinálj egyet. </string>
+    <string name="itemNotNamed">Kérlek adj neveta listának! </string>
+    <string name="noList">Nincsenek elemei a listában! Kérjük töltse ki.</string>
     <string name="hintadd">Ha rossz elemet adott hozzá, csak húzza balra a listába, és törölve van. </string>
     <string name="pubid">pub-7036765120364615</string>
     <string-array name="list_of_items">
-        <item>Almalé</item>
+        <item>yoyo</item>
+        <item>tupper_ware</item>
+        <item>póló</item>
+        <item>tepsi</item>
+        <item>zseblámpa</item>
+        <item>fogkefe</item>
+        <item>ragasztó pisztoly</item>
+        <item>vécé papír</item>
+        <item>kenyérpirító</item>
+        <item>melegszendvics sütő</item>
+        <item>strandpapucs</item>
+        <item>napszemüveg</item>
+        <item>tűzőgép</item>
+        <item>fűszer</item>
+        <item>zokni</item>
+        <item>folyékony</item>
+        <item>szappan</item>
+        <item>öblíto</item>
+        <item>lapát</item>
+        <item>olló</item>
+        <item>konyha mérleg</item>
+        <item>rúzs</item>
+        <item>sodrófa</item>
+        <item>rekord</item>
+        <item>rajzszeg</item>
+        <item>por</item>
+        <item>teáskanna</item>
+        <item>búvárdugattyú</item>
+        <item>tányér</item>
+        <item>pizza szelő</item>
+        <item>gyógyszer</item>
+        <item>állat eledel</item>
+        <item>ceruza</item>
+        <item>toll</item>
+        <item>hámozókés</item>
+        <item>parfüm</item>
+        <item>harisnyanadrág</item>
+        <item>nadrág</item>
+        <item>festék</item>
+        <item>sütő</item>
+        <item>körömlakk</item>
+        <item>húsdaráló</item>
+        <item>mikrohullámú sütő</item>
+        <item>szövegkiemelő</item>
+        <item>smink</item>
+        <item>folyékony szappan</item>
+        <item>kés</item>
+        <item>töklámpás</item>
+        <item>takarítás</item>
+        <item>akasztó</item>
+        <item>botmixer</item>
+        <item>kézitáska</item>
+        <item>gyufa</item>
+        <item>virágcserép</item>
+        <item>mosogatószer</item>
+        <item>ragasztó</item>
+        <item>pohár</item>
+        <item>gyömbér</item>
+        <item>hűtőszekrény</item>
+        <item>villa</item>
+        <item>papírzsebkendő</item>
+        <item>arc</item>
+        <item>szempilla</item>
+        <item>konyhai óra</item>
+        <item>poroló</item>
+        <item>csésze</item>
+        <item>kozmetikum</item>
+        <item>dugóhúzó</item>
+        <item>kondér</item>
+        <item>fakanál</item>
+        <item>tűzhely</item>
+        <item>üveg</item>
+        <item>tartály</item>
+        <item>fésű</item>
+        <item>színes ceruzák</item>
+        <item>kávéskanna</item>
+        <item>kávéfőző</item>
+        <item>szegfűszeg</item>
+        <item>szék</item>
+        <item>lánc</item>
+        <item>konzervnyitó</item>
+        <item>gyertya</item>
+        <item>izzó</item>
+        <item>lego</item>
+        <item>ablakmosó</item>
+        <item>mosószer</item>
+        <item>turmixgép</item>
+        <item>akous fúró</item>
+        <item>akkumulátor</item>
+        <item>alap</item>
+        <item>kosár</item>
+        <item>kötszerek</item>
+        <item>táska</item>
+        <item>baba</item>
+        <item>kötény</item>
+        <item>alufólia</item>
+        <item>akkumulátor</item>
+        <item>almalé</item>
         <item>spárga</item>
-        <item>Avokádo</item>
-        <item>Banán</item>
-        <item>Banán split</item>
-        <item>Bab</item>
-        <item>Sör</item>
-        <item>Bento</item>
-        <item>Szülinapi trota</item>
-        <item>FEkete bors</item>
-        <item>Bolognese</item>
-        <item>Bonbon</item>
-        <item>Kenyér</item>
-        <item>Brokkoli</item>
-        <item>Brochette</item>
-        <item>Cipó</item>
-        <item>Burrito</item>
-        <item>Vaj</item>
-        <item>Fejes káposzta</item>
-        <item>Cukorka</item>
-        <item>Konzerv</item>
-        <item>Sárgarépa</item>
-        <item>Zeller</item>
-        <item>Sajt</item>
-        <item>Sajt szósz</item>
-        <item>Cseresznye</item>
-        <item>Csirke falatkák</item>
-        <item>Csirke comb</item>
-        <item>Csirke</item>
-        <item>Chilli</item>
-        <item>Kínai(étel)</item>
-        <item>Chips</item>
-        <item>Darálthús</item>
-        <item>Fahéjas csiga</item>
-        <item>Szeder</item>
-        <item>Szeder lekvár</item>
-        <item>Kókusz koktél</item>
-        <item>Kávé</item>
-        <item>Koktél</item>
-        <item>Süti</item>
-        <item>Koriander</item>
-        <item>Corndog</item>
-        <item>Vattacukor</item>
+        <item>avokádo</item>
+        <item>banán</item>
+        <item>banán split</item>
+        <item>bab</item>
+        <item>sör</item>
+        <item>bento</item>
+        <item>szülinapi trota</item>
+        <item>fekete bors</item>
+        <item>bolognese</item>
+        <item>bonbon</item>
+        <item>kenyér</item>
+        <item>brokkoli</item>
+        <item>brochette</item>
+        <item>cipó</item>
+        <item>burrito</item>
+        <item>vaj</item>
+        <item>fejes káposzta</item>
+        <item>cukorka</item>
+        <item>konzerv</item>
+        <item>sárgarépa</item>
+        <item>zeller</item>
+        <item>sajt</item>
+        <item>sajt szósz</item>
+        <item>cseresznye</item>
+        <item>csirke falatkák</item>
+        <item>csirke comb</item>
+        <item>csirke</item>
+        <item>chilli</item>
+        <item>kínai(étel)</item>
+        <item>chips</item>
+        <item>darálthús</item>
+        <item>fahéjas csiga</item>
+        <item>szeder</item>
+        <item>szeder lekvár</item>
+        <item>kókusz koktél</item>
+        <item>kávé</item>
+        <item>koktél</item>
+        <item>süti</item>
+        <item>koriander</item>
+        <item>corndog</item>
+        <item>vattacukor</item>
         <item>tehén</item>
-        <item>Rák</item>
-        <item>Édesvízi rák</item>
-        <item>Kroaszon</item>
-        <item>Uborka</item>
-        <item>Cupcake</item>
-        <item>Tím szam</item>
-        <item>Fánk</item>
-        <item>Dolma</item>
-        <item>Sárkány gyümölcs</item>
-        <item>Öntet</item>
+        <item>rák</item>
+        <item>édesvízi rák</item>
+        <item>kroaszon</item>
+        <item>uborka</item>
+        <item>cupcake</item>
+        <item>tím szam</item>
+        <item>fánk</item>
+        <item>dolma</item>
+        <item>sárkány gyümölcs</item>
+        <item>öntet</item>
         <item>kacsa</item>
-        <item>Durián</item>
-        <item>Tojás</item>
-        <item>Padlizsán</item>
-        <item>Espresso</item>
-        <item>Hal filé</item>
-        <item>Hal</item>
-        <item>Sült krumpli</item>
-        <item>Sült csirke</item>
-        <item>Fokhagyma</item>
-        <item>Grapefruit</item>
-        <item>Szőlő</item>
-        <item>Zöld oliva</item>
-        <item>Guava</item>
-        <item>Sonka</item>
-        <item>Hamburger</item>
-        <item>Mogyoró</item>
-        <item>Méz</item>
-        <item>Komló</item>
-        <item>Forró csoki</item>
-        <item>Csípős szósz</item>
-        <item>Hotdog</item>
-        <item>Jég</item>
-        <item>Jégkrém</item>
-        <item>Zselé</item>
+        <item>durián</item>
+        <item>tojás</item>
+        <item>padlizsán</item>
+        <item>espresso</item>
+        <item>hal filé</item>
+        <item>hal</item>
+        <item>sült krumpli</item>
+        <item>sült csirke</item>
+        <item>fokhagyma</item>
+        <item>grapefruit</item>
+        <item>szőlő</item>
+        <item>zöld oliva</item>
+        <item>guava</item>
+        <item>sonka</item>
+        <item>hamburger</item>
+        <item>mogyoró</item>
+        <item>méz</item>
+        <item>komló</item>
+        <item>forró csoki</item>
+        <item>csípős szósz</item>
+        <item>hotdog</item>
+        <item>jég</item>
+        <item>jégkrém</item>
+        <item>zselé</item>
         <item>kebab</item>
-        <item>Kechup</item>
-        <item>Kiwi</item>
-        <item>Lasangne</item>
-        <item>Comb hús</item>
-        <item>Citrom</item>
-        <item>Kerti saláta</item>
-        <item>Pirított borda</item>
-        <item>Nyalóka</item>
-        <item>Macaron</item>
-        <item>Mango</item>
-        <item>Mangosztán</item>
-        <item>Lekvár</item>
-        <item>Majonéz</item>
-        <item>Tej shake</item>
-        <item>Tej</item>
-        <item>Muffin</item>
-        <item>Gomba</item>
-        <item>Sárgadinnye</item>
-        <item>Mustár</item>
-        <item>Nachos</item>
-        <item>Tészta</item>
-        <item>Diófélék</item>
-        <item>Abrakzab</item>
-        <item>Tintahal</item>
-        <item>Sütő olaj</item>
-        <item>Olivaolaj</item>
-        <item>Hagyma</item>
-        <item>Hagymaszósz</item>
-        <item>Hagymakarikák</item>
-        <item>Narancs</item>
-        <item>Narancslé</item>
-        <item>Osztriga</item>
-        <item>Palacsinta</item>
-        <item>Paprika</item>
-        <item>Pármai sonka</item>
-        <item>Pasztinák</item>
-        <item>Barack</item>
-        <item>Mogyoró</item>
-        <item>Körte</item>
-        <item>Borsó</item>
-        <item>Tökmag</item>
-        <item>Pite</item>
-        <item>Sertés</item>
-        <item>Ananász</item>
-        <item>Pizza</item>
-        <item>Szílva</item>
-        <item>Gránátalma</item>
-        <item>Popcorn</item>
-        <item>Krumpli</item>
-        <item>Rák</item>
-        <item>Perec</item>
-        <item>Borda</item>
-        <item>Tök</item>
-        <item>Bárány borda</item>
+        <item>kechup</item>
+        <item>kiwi</item>
+        <item>lasangne</item>
+        <item>comb hús</item>
+        <item>citrom</item>
+        <item>kerti saláta</item>
+        <item>pirított borda</item>
+        <item>nyalóka</item>
+        <item>macaron</item>
+        <item>mango</item>
+        <item>mangosztán</item>
+        <item>lekvár</item>
+        <item>majonéz</item>
+        <item>tej shake</item>
+        <item>tej</item>
+        <item>muffin</item>
+        <item>gomba</item>
+        <item>sárgadinnye</item>
+        <item>mustár</item>
+        <item>nachos</item>
+        <item>tészta</item>
+        <item>diófélék</item>
+        <item>abrakzab</item>
+        <item>tintahal</item>
+        <item>sütő olaj</item>
+        <item>olivaolaj</item>
+        <item>hagyma</item>
+        <item>hagymaszósz</item>
+        <item>hagymakarikák</item>
+        <item>narancs</item>
+        <item>narancslé</item>
+        <item>osztriga</item>
+        <item>palacsinta</item>
+        <item>paprika</item>
+        <item>pármai sonka</item>
+        <item>pasztinák</item>
+        <item>barack</item>
+        <item>mogyoró</item>
+        <item>körte</item>
+        <item>borsó</item>
+        <item>tökmag</item>
+        <item>pite</item>
+        <item>sertés</item>
+        <item>ananász</item>
+        <item>pizza</item>
+        <item>szílva</item>
+        <item>gránátalma</item>
+        <item>popcorn</item>
+        <item>krumpli</item>
+        <item>rák</item>
+        <item>perec</item>
+        <item>borda</item>
+        <item>tök</item>
+        <item>bárány borda</item>
         <item>oldalas</item>
-        <item>Retek</item>
-        <item>Ramen</item>
-        <item>Málna</item>
-        <item>Rizs</item>
-        <item>Füstőlt rostélyos</item>
-        <item>Szaké</item>
-        <item>Liszt</item>
-        <item>Szalámi</item>
-        <item>Saláta</item>
-        <item>Lazac</item>
-        <item>Só</item>
-        <item>Sózott disznóhús</item>
-        <item>Szardínia</item>
-        <item>Kolbász</item>
-        <item>Szezám mag</item>
-        <item>Szezám olaj</item>
-        <item>Bárány hús</item>
-        <item>Szóda</item>
-        <item>Leves</item>
-        <item>Szója</item>
-        <item>Spagetti</item>
-        <item>Spenót</item>
-        <item>Steak</item>
-        <item>Eper</item>
-        <item>Cukor</item>
-        <item>Kockacukor</item>
-        <item>Sushi</item>
+        <item>retek</item>
+        <item>ramen</item>
+        <item>málna</item>
+        <item>rizs</item>
+        <item>füstőlt rostélyos</item>
+        <item>szaké</item>
+        <item>liszt</item>
+        <item>szalámi</item>
+        <item>saláta</item>
+        <item>lazac</item>
+        <item>só</item>
+        <item>sózott disznóhús</item>
+        <item>szardínia</item>
+        <item>kolbász</item>
+        <item>szezám mag</item>
+        <item>szezám olaj</item>
+        <item>bárány hús</item>
+        <item>szóda</item>
+        <item>leves</item>
+        <item>szója</item>
+        <item>spagetti</item>
+        <item>spenót</item>
+        <item>steak</item>
+        <item>eper</item>
+        <item>cukor</item>
+        <item>kockacukor</item>
+        <item>sushi</item>
         <item>édes burgonya</item>
         <item>édesítőszer</item>
-        <item>Taco</item>
-        <item>Tea</item>
+        <item>taco</item>
+        <item>tea</item>
         <item>paradicsom</item>
-        <item>Tortilla</item>
-        <item>Tarló répa</item>
-        <item>Ecet</item>
+        <item>tortilla</item>
+        <item>tarló répa</item>
+        <item>ecet</item>
         <item>waffles</item>
-        <item>Görög dinnyi</item>
+        <item>görög dinnyi</item>
         <item>whisky</item>
-        <item>Fekete áfonya</item>
-        <item>Fekete áfonya lekvár</item>
-        <item>Bor</item>
+        <item>fekete áfonya</item>
+        <item>fekete áfonya lekvár</item>
+        <item>bor</item>
         <item>wrap</item>
         <item>joghurt</item>
-        <item>Cukkini</item>
+        <item>cukkini</item>
     </string-array>
-    <string-array name="list_of_spinner">
-        <item>-Válassz-</item>
-        <item>kg</item>
-        <item>csomag</item>
-        <item>g</item>
-        <item>ml</item>
-        <item>l</item>
-        <item>Darab</item>
-    </string-array>
+
 </resources>

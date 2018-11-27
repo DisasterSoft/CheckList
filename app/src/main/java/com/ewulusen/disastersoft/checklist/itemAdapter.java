@@ -1,4 +1,7 @@
 package com.ewulusen.disastersoft.checklist;
+import android.content.Context;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,23 +14,30 @@ import android.widget.TextView;
 import java.util.List;
 public class itemAdapter extends RecyclerView.Adapter<itemAdapter.MyViewHolder> {
     private List<item> moviesList;
+    private Context mContext;
+    databaseHelper userDB;
+    ViewGroup parent2=null;
+    View view2;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
+
         public TextView name, menny, db;
         public ImageView img;
         public RelativeLayout viewBackground, viewForeground;
-
         public MyViewHolder(View view) {
             super(view);
             name = (TextView) view.findViewById(R.id.name);
+            menny = (TextView) view.findViewById(R.id.menn);
             viewBackground = view.findViewById(R.id.view_background);
             viewForeground = view.findViewById(R.id.view_foreground);
             img = view.findViewById(R.id.image);
+            view2=view;
         }
     }
 
 
-    public itemAdapter(List<item> moviesList) {
+    public itemAdapter(List<item> moviesList,Context mContext) {
+        this.mContext=mContext;
         this.moviesList = moviesList;
     }
 
@@ -35,445 +45,42 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.MyViewHolder> 
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_list_row, parent, false);
-
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        String[] list={"alap","apple juice",
-                "asparagus",
-                "avocado",
-                "banana",
-                "banana split",
-                "bean",
-                "beer",
-                "bento",
-                "birthday cake",
-                "black pepper",
-                "bolognese",
-                "bonbon",
-                "bread",
-                "broccoli",
-                "brochette",
-                "bun",
-                "burrito",
-                "butter",
-                "cabbage",
-                "candy",
-                "canne",
-                "carrot",
-                "celery",
-                "cheese",
-                "cheezy sauce",
-                "cherry",
-                "chicken bits",
-                "chicken leg",
-                "chiken",
-                "chilli",
-                "chinabox",
-                "chips",
-                "chopped meat",
-                "cinnamon roll",
-                "cloudberry",
-                "cloudberry jam",
-                "coconut cocktail",
-                "coffee",
-                "coktail",
-                "cookie",
-                "coriander",
-                "corndog",
-                "cotton candy",
-                "cow",
-                "crab",
-                "crawfish",
-                "croissant",
-                "cucumber",
-                "cupcake",
-                "dim sum",
-                "doughnut",
-                "dolmades",
-                "dragon fruit",
-                "dressing",
-                "duck",
-                "durian",
-                "egg",
-                "eggplant",
-                "espresso",
-                "filleted fish",
-                "fish",
-                "french fries",
-                "fried chicken",
-                "garlic",
-                "grapefruit",
-                "grapes",
-                "green olive",
-                "guava",
-                "ham",
-                "hamburger",
-                "hazelnut",
-                "honey",
-                "hops",
-                "hot chocolate",
-                "hot dog",
-                "hot sauce",
-                "ice",
-                "icecream",
-                "jelly",
-                "kebab",
-                "kechup",
-                "kifli",
-                "kiwi",
-                "lasangne",
-                "leg steak",
-                "lemon",
-                "lettuce",
-                "loin rack",
-                "lollipop",
-                "macaron",
-                "mango",
-                "mangosteen",
-                "marmalade",
-                "mayo",
-                "milch shake",
-                "milk",
-                "muffin",
-                "mushroom",
-                "muskmelon",
-                "mustar",
-                "nachos",
-                "noodles",
-                "nut",
-                "oats",
-                "octopus",
-                "oil",
-                "olive oil",
-                "onion",
-                "onion sauce",
-                "onion rings",
-                "orange",
-                "orange juice",
-                "oysters",
-                "pancake",
-                "paprika",
-                "parma ham",
-                "parsnip",
-                "peach",
-                "peanut",
-                "pear",
-                "peas",
-                "pepitas",
-                "pie",
-                "pig",
-                "pinapple",
-                "pizza",
-                "plum",
-                "pomegranate",
-                "popcorn",
-                "potato",
-                "prawn",
-                "pretzel",
-                "prime rib",
-                "pumpkin",
-                "rack of lamb",
-                "rack of ribs",
-                "radish",
-                "ramen",
-                "raspberries",
-                "rice",
-                "rolled roast",
-                "sace",
-                "sack of flour",
-                "salami",
-                "salate",
-                "salmon",
-                "salt",
-                "salt pork",
-                "sardinie",
-                "sausage",
-                "sesame",
-                "sesame oil",
-                "sheep",
-                "soda bottle",
-                "soup",
-                "soy",
-                "spaghetti",
-                "spinach",
-                "steak",
-                "strawberry",
-                "sugar",
-                "sugar cubes",
-                "sushi",
-                "sweet potato",
-                "sweetener",
-                "taco",
-                "tea",
-                "tomato",
-                "tortilla",
-                "turnip",
-                "vinagera",
-                "waffles",
-                "watter melone",
-                "whisky",
-                "whortleberry",
-                "whortleberry jelly",
-                "wine bottle",
-                "wrap",
-                "yoghurt",
-                "zucchini"};
-        String[] list_hun={"alap", "Almalé",
-                "spárga",
-                "Avokádo",
-                "Banán",
-                "Banán split",
-                "Bab",
-                "Sör",
-                "Bento",
-                "Szülinapi trota",
-                "FEkete bors",
-                "Bolognese",
-                "Bonbon",
-                "Kenyér",
-                "Brokkoli",
-                "Brochette",
-                "Cipó",
-                "Burrito",
-                "Vaj",
-                "Fejes káposzta",
-                "Cukorka",
-                "Konzerv",
-                "Sárgarépa",
-                "Zeller",
-                "Sajt",
-                "Sajt szósz",
-                "Cseresznye",
-                "Csirke falatkák",
-                "Csirke comb",
-                "Csirke",
-                "Chilli",
-                "Kínai(étel)",
-                "Chips",
-                "Darálthús",
-                "Fahéjas csiga",
-                "Szeder",
-                "Szeder lekvár",
-                "Kókusz koktél",
-                "Kávé",
-                "Koktél",
-                "Süti",
-                "Koriander",
-                "Corndog",
-                "Vattacukor",
-                "tehén",
-                "Rák",
-                "Édesvízi rák",
-                "Kroaszon",
-                "Uborka",
-                "Cupcake",
-                "Tím szam",
-                "Fánk",
-                "Dolma",
-                "Sárkány gyümölcs",
-                "Öntet",
-                "kacsa",
-                "Durián",
-                "Tojás",
-                "Padlizsán",
-                "Espresso",
-                "Hal filé",
-                "Hal",
-                "Sült krumpli",
-                "Sült csirke",
-                "Fokhagyma",
-                "Grapefruit",
-                "Szőlő",
-                "Zöld oliva",
-                "Guava",
-                "Sonka",
-                "Hamburger",
-                "Mogyoró",
-                "Méz",
-                "Komló",
-                "Forró csoki",
-                "Csípős szósz",
-                "Hotdog",
-                "Jég",
-                "Jégkrém",
-                "Zselé",
-                "kebab",
-                "Kechup",
-                "Kifli",
-                "Kiwi",
-                "Lasangne",
-                "Comb hús",
-                "Citrom",
-                "Kerti saláta",
-                "Pirított borda",
-                "Nyalóka",
-                "Macaron",
-                "Mango",
-                "Mangosztán",
-                "Lekvár",
-                "Majonéz",
-                "Tej shake",
-                "Tej",
-                "Muffin",
-                "Gomba",
-                "Sárgadinnye",
-                "Mustár",
-                "Nachos",
-                "Tészta",
-                "Diófélék",
-                "Abrakzab",
-                "Tintahal",
-                "Sütő olaj",
-                "Olivaolaj",
-                "Hagyma",
-                "Hagymaszósz",
-                "Hagymakarikák",
-                "Narancs",
-                "Narancslé",
-                "Osztriga",
-                "Palacsinta",
-                "Paprika",
-                "Pármai sonka",
-                "Pasztinák",
-                "Barack",
-                "Mogyoró",
-                "Körte",
-                "Borsó",
-                "Tökmag",
-                "Pite",
-                "Sertés",
-                "Ananász",
-                "Pizza",
-                "Szílva",
-                "Gránátalma",
-                "Popcorn",
-                "Krumpli",
-                "Rák",
-                "Perec",
-                "Borda",
-                "Tök",
-                "Bárány borda",
-                "oldalas",
-                "Retek",
-                "Ramen",
-                "Málna",
-                "Rizs",
-                "Füstőlt rostélyos",
-                "Szaké",
-                "Liszt",
-                "Szalámi",
-                "Saláta",
-                "Lazac",
-                "Só",
-                "Sózott disznóhús",
-                "Szardínia",
-                "Kolbász",
-                "Szezám mag",
-                "Szezám olaj",
-                "Bárány hús",
-                "Szóda",
-                "Leves",
-                "Szója",
-                "Spagetti",
-                "Spenót",
-                "Steak",
-                "Eper",
-                "Cukor",
-                "Kockacukor",
-                "Sushi",
-                "édes burgonya",
-                "édesítőszer",
-                "Taco",
-                "Tea",
-                "paradicsom",
-                "Tortilla",
-                "Tarló répa",
-                "Ecet",
-                "waffles",
-                "Görög dinnyi",
-                "whisky",
-                "Fekete áfonya",
-                "Fekete áfonya lekvár",
-                "Bor",
-                "wrap",
-                "joghurt",
-                "Cukkini"};
-        int[] images={R.drawable.alap,R.drawable.apple_juice,R.drawable.asparagus,
-    R.drawable.avocado,R.drawable.banana,R.drawable.banana_split,
-                R.drawable.bean,R.drawable.beer,
-                R.drawable.bento,R.drawable.birthday_cake,R.drawable.black_pepper,
-                R.drawable.bolognese,R.drawable.bonbon,R.drawable.bread,
-                R.drawable.broccoli,R.drawable.brochette,R.drawable.bun,
-                R.drawable.burrito,R.drawable.butter,R.drawable.cabbage,
-                R.drawable.candy,R.drawable.canne,R.drawable.carrot,R.drawable.celery,
-                R.drawable.cheese,R.drawable.cheezy_sauce,R.drawable.cherry,
-                R.drawable.chicken_bits,R.drawable.chicken_leg,R.drawable.chiken,R.drawable.chilli,
-                R.drawable.chinabox,R.drawable.chips,R.drawable.chopped_meat,
-                R.drawable.cinnamon_roll, R.drawable.cloudberry, R.drawable.cloudberry_jam,
-                R.drawable.coconut_cocktail,R.drawable.coffee,R.drawable.coktail,R.drawable.cookie,
-                R.drawable.coriander,R.drawable.corndog,R.drawable.cotton_candy,R.drawable.cow,
-                R.drawable.crab,R.drawable.crawfish,R.drawable.croissant,
-                R.drawable.cucumber,R.drawable.cupcake,R.drawable.dim_sum,R.drawable.doghnout,
-                R.drawable.dolmades,R.drawable.dragon_fruit,R.drawable.dressing,
-                R.drawable.duck,R.drawable.durian,R.drawable.egg,R.drawable.eggplant,R.drawable.espresso,
-                R.drawable.filleted_fish,R.drawable.fish,R.drawable.french_fries,R.drawable.fried_chicken,
-                R.drawable.garlic,R.drawable.grapefruit,R.drawable.grapes,R.drawable.green_olive,R.drawable.guava,
-                R.drawable.ham,R.drawable.hamburger,R.drawable.hazelnut,
-                R.drawable.honey,R.drawable.hops,R.drawable.hot_chocolate,
-                R.drawable.hotdog,R.drawable.hot_sauce,R.drawable.ice,R.drawable.icecream,
-                R.drawable.jelly,R.drawable.kebab,R.drawable.kechup,R.drawable.kifli,
-                R.drawable.kiwi,R.drawable.lasangne,R.drawable.leg_steak,R.drawable.lemon,R.drawable.lettuce,
-                R.drawable.loin_rack,R.drawable.lollipop, R.drawable.macaron,
-                R.drawable.mango,R.drawable.mangosteen,R.drawable.marmalade,
-                R.drawable.mayo,R.drawable.milch_sake,R.drawable.milk,R.drawable.muffin,R.drawable.mushroom,
-                R.drawable.muskmelon, R.drawable.mustar, R.drawable.nachos,R.drawable.noodles,
-                R.drawable.nut,R.drawable.oats,R.drawable.octopus,R.drawable.oil,
-                R.drawable.olive_oil,R.drawable.onion,R.drawable.onion_sauce,R.drawable.onion_rings,
-                R.drawable.orange,R.drawable.orange_juice,R.drawable.oysters,
-                R.drawable.pancake,R.drawable.paprika,R.drawable.parma_ham,R.drawable.parsnip,R.drawable.peach,
-                R.drawable.peanuts,R.drawable.pear,R.drawable.peas,R.drawable.pepitas,R.drawable.pie,R.drawable.pig,
-                R.drawable.pinapple,R.drawable.pizza,R.drawable.plum,R.drawable.pomegranate,
-                R.drawable.popcorn,R.drawable.potato,R.drawable.prawn,R.drawable.pretzel,R.drawable.prime_rib,
-                R.drawable.pumpkin,R.drawable.rack_of_lamb,R.drawable.rack_of_ribs,
-                R.drawable.radish,R.drawable.ramen,R.drawable.raspberries,R.drawable.rice,
-                R.drawable.rolled_roast,R.drawable.sace, R.drawable.sack_of_flour,
-                R.drawable.salami,R.drawable.salate,R.drawable.salmon,R.drawable.salt,
-                R.drawable.salt_pork,R.drawable.sardinie,R.drawable.sausage,
-                R.drawable.sesame, R.drawable.sesame_oil,R.drawable.sheep,
-                R.drawable.soda_bottle,R.drawable.soup,R.drawable.soy,
-                R.drawable.spagetti,R.drawable.spinach,R.drawable.steak,
-                R.drawable.strawberry,R.drawable.sugar,R.drawable.sugar_cubes,R.drawable.sushi,
-                R.drawable.sweet_potato,R.drawable.sweetener,R.drawable.taco,
-                R.drawable.tea,R.drawable.tomato,R.drawable.tortilla,R.drawable.turnip,
-                R.drawable.vinagera,R.drawable.waffles,R.drawable.watter_melone,R.drawable.whisky,
-                R.drawable.whortleberry,R.drawable.whortleberry_jelly,R.drawable.wine_bottle,
-                R.drawable.wrap,R.drawable.yoghurt,R.drawable.zucchini,};
+
         item movie = moviesList.get(position);
         holder.name.setText(movie.getName());
-        int found=0;
-        for(int i=0;i<list.length;i++)
+        String[] expl=movie.getName().split(" ");
+        userDB=new databaseHelper(mContext);
+        String imageName="0";
+        imageName=userDB.getItemName(movie.getName());
+        if(!imageName.equals("0"))
         {
-
-            if(list[i].equals(movie.getName())){
-                found=i;
-                break;
+            holder.name.setText(movie.getName());
+            holder.menny.setText("");
+        }
+        else {
+            int i = 0;
+            for (i = 0; i < expl.length; i++) {
+                //Log.d("hossz",expl[i]);
+                imageName = userDB.getItemName(expl[i]);
+                if (!imageName.equals("0")) {
+                    holder.name.setText(expl[i]);
+                    holder.menny.setText(movie.getName().replace(expl[i], ""));
+                    break;
+                } else {
+                    imageName = "alap";
+                }
             }
         }
-        for(int i=0;i<list_hun.length;i++)
-        {
 
-            if(list_hun[i].equals(movie.getName())){
-                found=i;
-                break;
-            }
+        holder.img.setImageResource(mContext.getResources().getIdentifier("com.ewulusen.disastersoft.checklist:drawable/"+imageName,null,null));
+
+
         }
-
-       holder.img.setImageResource(images[found]);
-
-    }
 
     @Override
     public int getItemCount() {
