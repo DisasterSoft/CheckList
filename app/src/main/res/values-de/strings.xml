@@ -26,6 +26,7 @@
         <string name = "noList"> Sie haben keine Artikel in Ihren Liste! Bitte füllen Sie es aus. </string>
         <string name = "hintadd"> Wenn Sie das falsche item hinzugefügt haben, wischen Sie es einfach nach links und es wird gelöscht. </string>
         <string name = "pubid"> pub-7036765120364615 </string>
+        <string name = "noLongClick"> Bitte nicht mit dem langen Klick!</string>
         <string-array name = "list_of_items">
         <item>yoyo</item>
     <item>tupperware</item>

@@ -25,6 +25,7 @@
     <string name="noList">You don\'t have any items in Your lists! Please fill it.</string>
     <string name="hintadd">If you added the wrong item, just swipe it to left and it is deleted. </string>
     <string name="pubid">pub-7036765120364615</string>
+    <string name="noLongClick">Please do not use the long click!</string>
     <string-array name="list_of_items">
         <item>yoyo</item>
         <item>tupper_ware</item>

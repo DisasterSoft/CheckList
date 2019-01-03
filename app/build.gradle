@@ -6,9 +6,12 @@ android {
         applicationId "com.ewulusen.disastersoft.checklist"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 12
-        versionName "1.8"
+        versionCode 13
+        versionName "1.9"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        lintOptions {
+            abortOnError false
+        }
     }
     buildTypes {
         release {

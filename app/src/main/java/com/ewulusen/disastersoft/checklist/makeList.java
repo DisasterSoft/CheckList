@@ -60,7 +60,7 @@ public class makeList extends AppCompatActivity implements recyclerItemTouchHelp
         lista.setItemAnimator(new DefaultItemAnimator());
         lista.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         lista.setAdapter(iAdapter);
-        Log.d("id",id+"");
+        //Log.d("id",id+"");
         if(id==null)
         {
 

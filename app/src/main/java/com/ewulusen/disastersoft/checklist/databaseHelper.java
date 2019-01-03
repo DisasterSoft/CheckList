@@ -309,17 +309,18 @@ public class databaseHelper extends SQLiteOpenHelper {
         String language=lang;
         SQLiteDatabase localSQLiteDatabase = getReadableDatabase();
         String str1 = "SELECT IMAGE FROM "+isTableName+" where Name='"+name+"' and LANG='"+language+"'";
-         Log.d("SQL", str1);
+         //Log.d("SQL", str1);
         Cursor localCursor = localSQLiteDatabase.rawQuery(str1, null);
-        localCursor.moveToNext();
+
         if(localCursor.getCount()==0)
         {
             images="0";
         }
         else {
+            localCursor.moveToNext();
             images = localCursor.getString(localCursor.getColumnIndex("IMAGE"));
         }
-        Log.d("kép",images);
+       // Log.d("kép",images);
         return images;
     }
     public  Cursor getItems(String id)
@@ -372,10 +373,12 @@ public class databaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase localSQLiteDatabaseR = getReadableDatabase();
         String str1 = "SELECT ID FROM "+uTableName+" where userName='"+name+"'";
         Cursor localCursor = localSQLiteDatabaseR.rawQuery(str1, null);
-        localCursor.moveToNext();
-        String id=localCursor.getString(localCursor.getColumnIndex("ID"));
-        localSQLiteDatabaseW.delete(iTableName,"OWNER='"+id+"'",null);
-        localSQLiteDatabaseW.delete(uTableName,"userName='"+name+"'",null);
+        if(localCursor.getCount()>0) {
+            localCursor.moveToNext();
+            String id = localCursor.getString(localCursor.getColumnIndex("ID"));
+            localSQLiteDatabaseW.delete(iTableName, "OWNER='" + id + "'", null);
+            localSQLiteDatabaseW.delete(uTableName, "userName='" + name + "'", null);
+        }
     }
     public boolean renameList(String name,String newName)
     {
@@ -402,8 +405,10 @@ public class databaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase localSQLiteDatabaseR = getReadableDatabase();
         String str1 = "SELECT ID FROM "+uTableName+" where userName='"+name+"'";
         Cursor localCursor = localSQLiteDatabaseR.rawQuery(str1, null);
-        localCursor.moveToNext();
-        id=localCursor.getString(localCursor.getColumnIndex("ID"));
+        if(localCursor.getCount()>0) {
+            localCursor.moveToNext();
+            id = localCursor.getString(localCursor.getColumnIndex("ID"));
+        }
         return id;
     }
 
@@ -415,25 +420,25 @@ public class databaseHelper extends SQLiteOpenHelper {
         ContentValues localContentValues = new ContentValues();
         String str1 = "SELECT userName FROM "+uTableName+" where ID='"+name+"'";
         Cursor localCursor = localSQLiteDatabaseR.rawQuery(str1, null);
-        localCursor.moveToNext();
-        id=localCursor.getString(localCursor.getColumnIndex("userName"));
-        Random r = new Random();
-        int i1 = r.nextInt(100);
-        String name1=id+i1;
-        addData(name1);
-        String id1=getId(name1);
-        str1 = "SELECT * FROM "+iTableName+" where OWNER='"+name+"'";
-        localCursor = localSQLiteDatabaseR.rawQuery(str1, null);
-        while(localCursor.moveToNext())
-        {
-            localContentValues.put("Name", localCursor.getString(localCursor.getColumnIndex("Name")));
-            localContentValues.put("OWNER", id1);
-            localSQLiteDatabaseW.insert(iTableName, null, localContentValues);
-            localContentValues.clear();
+        if(localCursor.getCount()>0) {
+            localCursor.moveToNext();
+            id = localCursor.getString(localCursor.getColumnIndex("userName"));
+            Random r = new Random();
+            int i1 = r.nextInt(100);
+            String name1 = id + i1;
+            addData(name1);
+            String id1 = getId(name1);
+            str1 = "SELECT * FROM " + iTableName + " where OWNER='" + name + "'";
+            localCursor = localSQLiteDatabaseR.rawQuery(str1, null);
+            while (localCursor.moveToNext()) {
+                localContentValues.put("Name", localCursor.getString(localCursor.getColumnIndex("Name")));
+                localContentValues.put("OWNER", id1);
+                localSQLiteDatabaseW.insert(iTableName, null, localContentValues);
+                localContentValues.clear();
+            }
+
+
         }
-
-
-
     }
       }
 

@@ -25,6 +25,7 @@
     <string name="noList">Nincsenek elemei a listában! Kérjük töltse ki.</string>
     <string name="hintadd">Ha rossz elemet adott hozzá, csak húzza balra a listába, és törölve van. </string>
     <string name="pubid">pub-7036765120364615</string>
+    <string name = "noLongClick">Kérem, ne használja a hosszú klikket!</string>
     <string-array name="list_of_items">
         <item>yoyo</item>
         <item>tupper_ware</item>

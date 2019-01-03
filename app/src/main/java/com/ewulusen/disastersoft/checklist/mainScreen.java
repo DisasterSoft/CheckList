@@ -2,10 +2,7 @@ package com.ewulusen.disastersoft.checklist;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.preference.DialogPreference;
 import android.support.v7.app.AlertDialog;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -30,7 +27,8 @@ import java.util.List;
 
 public class mainScreen extends AppCompatActivity {
     public static Intent intent;
-    public static String id, idC, seged;
+    public static String id,seged;
+    public static String idC="Mákosnudli";
     public static String[] seged_a, seged_b;
     databaseHelper userDB;
     private Button makeList, viewLists;
@@ -90,9 +88,13 @@ public class mainScreen extends AppCompatActivity {
 
             }
         });
-
-    }
-
+        lista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                return false;
+            }
+        });
+        }
     public void fillAdapter(String[] arrayL) {
         if(arrayL.length==1)
         {
@@ -129,91 +131,92 @@ listList.add(seged_b[0] + "                                                     
     public boolean onContextItemSelected(MenuItem item) {
         super.onContextItemSelected(item);
         final MenuItem item2 = item;
-        if (item2.getTitle().equals(getString(R.string.delete))) {
-            String[] dumy=idC.split("                                                      ");
-           userDB.deleteList(dumy[0]);
-           iAdapter.clear();
-           seged = userDB.getLists();
-           seged_a = seged.split(";");
-           fillAdapter(seged_a);
-        }
-        if (item2.getTitle().equals(getString(R.string.rename))) {
-            String[] dumy = idC.split("                                                      ");
-            final String fdumy=dumy[0];
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle(R.string.rename);
-            builder.setMessage(R.string.itemNotNamed);
-            input = new EditText(this);
-            builder.setView(input);
-            //Positiv button
-            builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
+        Log.d("IdC",idC);
+        if(!idC.equals("Mákosnudli")) {
+            if (item2.getTitle().equals(getString(R.string.delete))) {
+                String[] dumy = idC.split("                                                      ");
+                userDB.deleteList(dumy[0]);
+                iAdapter.clear();
+                seged = userDB.getLists();
+                seged_a = seged.split(";");
+                fillAdapter(seged_a);
+            }
+            if (item2.getTitle().equals(getString(R.string.rename))) {
+                String[] dumy = idC.split("                                                      ");
+                final String fdumy = dumy[0];
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle(R.string.rename);
+                builder.setMessage(R.string.itemNotNamed);
+                input = new EditText(this);
+                builder.setView(input);
+                //Positiv button
+                builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
 
-                @Override
-                public void onClick(DialogInterface dialog,int which) {
-                  String txt=input.getText().toString();
-                    if(userDB.renameList(fdumy,txt))
-                    {
-                        Toast.makeText(mainScreen.this, getString(R.string.itemSaved), Toast.LENGTH_SHORT).show();
-                        iAdapter.clear();
-                        seged = userDB.getLists();
-                        seged_a = seged.split(";");
-                        fillAdapter(seged_a);
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String txt = input.getText().toString();
+                        if (userDB.renameList(fdumy, txt)) {
+                            Toast.makeText(mainScreen.this, getString(R.string.itemSaved), Toast.LENGTH_SHORT).show();
+                            iAdapter.clear();
+                            seged = userDB.getLists();
+                            seged_a = seged.split(";");
+                            fillAdapter(seged_a);
+                        } else {
+                            Toast.makeText(mainScreen.this, getString(R.string.duplicateName), Toast.LENGTH_SHORT).show();
+
+                        }
                     }
-                    else
-                    {
-                        Toast.makeText(mainScreen.this, getString(R.string.duplicateName), Toast.LENGTH_SHORT).show();
-
+                });
+                //Negatív button
+                builder.setNegativeButton(R.string.back, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
                     }
-                }
-            });
-        //Negatív button
-            builder.setNegativeButton(R.string.back, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-                }
-            });
-            //Create dialog
-            AlertDialog ad=builder.create();
-            ad.show();
+                });
+                //Create dialog
+                AlertDialog ad = builder.create();
+                ad.show();
 
 
+            }
+            if (item2.getTitle().equals(getString(R.string.edit))) {
+                String[] dumy = idC.split("                                                      ");
+                String idk = userDB.getId(dumy[0]);
+                Intent intent2 = null;
+                intent2 = new Intent(mainScreen.this, makeList.class);
+                intent2.putExtra("datas", idk);
+                startActivity(intent2);
+                finish();
+
+            }
+            if (item2.getTitle().equals(getString(R.string.viewList))) {
+                String[] dumy = idC.split("                                                      ");
+                String idk = userDB.getId(dumy[0]);
+                Intent intent2 = null;
+                intent2 = new Intent(mainScreen.this, viewList.class);
+                intent2.putExtra("datas", idk);
+                startActivity(intent2);
+                finish();
+
+            }
+            if (item2.getTitle().equals(getString(R.string.copy))) {
+
+                Log.d("click", idC);
+                String[] dumy = idC.split("                                                      ");
+                String idk = userDB.getId(dumy[0]);
+                userDB.copyList(idk);
+                iAdapter.clear();
+                seged = userDB.getLists();
+                seged_a = seged.split(";");
+                fillAdapter(seged_a);
+            }
+            idC="Mákosnudli";
         }
-        if (item2.getTitle().equals(getString(R.string.edit))) {
-            String[] dumy = idC.split("                                                      ");
-            String idk=userDB.getId(dumy[0]);
-            Intent intent2 = null;
-            intent2 = new Intent(mainScreen.this, makeList.class);
-            intent2.putExtra("datas",idk);
-            startActivity(intent2);
-            finish();
-
-        }
-        if (item2.getTitle().equals(getString(R.string.viewList))) {
-            String[] dumy = idC.split("                                                      ");
-            String idk=userDB.getId(dumy[0]);
-            Intent intent2 = null;
-            intent2 = new Intent(mainScreen.this, viewList.class);
-            intent2.putExtra("datas",idk);
-            startActivity(intent2);
-            finish();
-
-        }
-        if (item2.getTitle().equals(getString(R.string.copy))) {
-            String[] dumy = idC.split("                                                      ");
-            String idk=userDB.getId(dumy[0]);
-            userDB.copyList(idk);
-            iAdapter.clear();
-            seged = userDB.getLists();
-            seged_a = seged.split(";");
-            fillAdapter(seged_a);
-
-
-
-
-        }
-
-
+            else
+            {
+                Toast.makeText(mainScreen.this, getString(R.string.noLongClick), Toast.LENGTH_SHORT).show();
+            }
         return true;
     }
 }
